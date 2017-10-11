@@ -63,6 +63,71 @@
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
+				<div class="panel-heading">
+					  <div class="panel-title">Información del Restaurante</div>
+				</div>
+			  				<div class="panel-body">
+			  					<form class="form-horizontal" role="form">
+								  <div class="form-group">
+								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="restName" placeholder="Nombre">
+								    </div>
+								  </div>
+									<div class="form-group">
+								    <label for="restCat" class="col-sm-2 control-label">Categoria:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="restCat" placeholder="Categoria">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restZone" class="col-sm-2 control-label">Zona:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="restZone" placeholder="Zona">
+								    </div>
+									</div>									
+								  <div class="form-group">
+								    <label class="col-sm-2 control-label">Dirección:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restAddr" class="form-control" placeholder="Direccion" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restTcom" class="col-sm-2 control-label">Tipo de comida:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="restTcom" placeholder="Tipo">
+								    </div>
+									</div>
+									
+
+
+								  <div class="form-group">
+								    <label class="col-sm-2 control-label">Readonly</label>
+								    <div class="col-sm-10">
+								      <span class="form-control">Read only text</span>
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <div class="col-sm-offset-2 col-sm-10">
+								      <div class="checkbox">
+								        <label>
+								          <input type="checkbox"> Checkbox
+								        </label>
+								      </div>
+								      <div class="checkbox">
+								        <label>
+								          <input type="checkbox"> Checkbox
+								        </label>
+								      </div>
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <div class="col-sm-offset-2 col-sm-10">
+								      <button type="submit" class="btn btn-primary">Sign in</button>
+								    </div>
+								  </div>
+								</form>
+			  				</div>
 		  	</div>
 		  </div>
 		</div>
