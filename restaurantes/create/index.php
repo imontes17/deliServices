@@ -98,7 +98,42 @@
 								      <input type="text" class="form-control" id="restTcom" placeholder="Tipo">
 								    </div>
 									</div>
-									
+									<div class="form-group">
+								    <label for="restPrice" class="col-sm-2 control-label">Precio:</label>
+								    <div class="col-sm-10">
+								      <input type="number" class="form-control" min="1" id="restPrice" placeholder="$">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Incluye:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Introducción:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Parrafo 1:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Parrafo 2:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Parrafo 3:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
+								    </div>
+									</div>
 
 
 								  <div class="form-group">
