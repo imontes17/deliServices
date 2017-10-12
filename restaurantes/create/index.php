@@ -134,28 +134,93 @@
 								      <textarea id="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
 								    </div>
 									</div>
-
-
-								  <div class="form-group">
-								    <label class="col-sm-2 control-label">Readonly</label>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Logo</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" id="restLogo">
+												<p class="help-block">
+													qwerty
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Imagen Principal</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" id="restImgp">
+												<p class="help-block">
+													qwerty
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+								    <label for="restVideo" class="col-sm-2 control-label">Link Video</label>
 								    <div class="col-sm-10">
-								      <span class="form-control">Read only text</span>
+								      <input type="text" class="form-control" id="restVideo" placeholder="Video">
 								    </div>
-								  </div>
-								  <div class="form-group">
-								    <div class="col-sm-offset-2 col-sm-10">
-								      <div class="checkbox">
-								        <label>
-								          <input type="checkbox"> Checkbox
-								        </label>
-								      </div>
-								      <div class="checkbox">
-								        <label>
-								          <input type="checkbox"> Checkbox
-								        </label>
-								      </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Imagen 2</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" id="restImg2">
+												<p class="help-block">
+													qwerty
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Imagen 3</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" id="restImg3">
+												<p class="help-block">
+													qwerty
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Frase:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restFrase" class="form-control" placeholder="Frase" rows="3"></textarea>
 								    </div>
-								  </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Editorial:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restEdit" class="form-control" placeholder="Editorial" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Logo Editorial</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" id="restLogoEdit">
+												<p class="help-block">
+													qwerty
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Sugeridos:</label>
+								    <div class="col-sm-10">
+								      <textarea id="restSug" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="restCoord" placeholder="Coordenadas">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restOrdDeli" class="col-sm-2 control-label">Ordenes Deli:</label>
+								    <div class="col-sm-10">
+								      <input type="number" class="form-control" min="0" id="restOrdDeli" placeholder="#">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restOrdAdi" class="col-sm-2 control-label">Ordenes Adicionales:</label>
+								    <div class="col-sm-10">
+								      <input type="number" class="form-control" min="0" id="restOrdAdi" placeholder="#">
+								    </div>
+									</div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
 								      <button type="submit" class="btn btn-primary">Sign in</button>
