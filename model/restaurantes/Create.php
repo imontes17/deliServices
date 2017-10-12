@@ -1,7 +1,8 @@
 <?php
 
 require '../Connection.php';
-
+echo $_POST["restOrdAdi"];
+/*
 try{
     $database = new Connection();    
     $db = $database->openConnection();    
@@ -14,6 +15,6 @@ try{
 catch (PDOException $e)
 {
     return false;
-}
+}*/
 
 ?>

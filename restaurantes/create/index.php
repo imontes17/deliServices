@@ -68,7 +68,7 @@
 					  <div class="panel-title">Información del Restaurante</div>
 				</div>
 			  				<div class="panel-body">
-			  					<form class="form-horizontal" role="form">
+			  					<form id="new-rest" class="form-horizontal" role="form">
 								  <div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
@@ -219,15 +219,14 @@
 									<div class="form-group">
 								    <label for="restOrdAdi" class="col-sm-2 control-label">Ordenes Adicionales:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" id="restOrdAdi" placeholder="#">
+								      <input type="number" class="form-control" min="0" name="restOrdAdi" placeholder="#">
 								    </div>
 									</div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
-										<button class="btn btn-primary" type="submit">
-													<i class="fa fa-save"></i>
-													Submit
-												</button>
+										<button id="btn-submit" class="btn btn-primary" type="button">
+													Guardar
+										</button>
 								    </div>
 								  </div>
 								</form>
@@ -249,6 +248,21 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../js/custom.js"></script>
+		<script src="../../js/custom.js"></script>
+		<script>
+		jQuery("#btn-submit").click(function(e){
+    	var url = "../../model/restaurantes/Create.php"; // the script where you handle the form input.
+    	jQuery.ajax({
+           type: "POST",
+           url: url,
+           data: jQuery("#new-rest").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               console.log(data); // show response from the php script.
+           }
+         });
+    		e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
+		</script>
   </body>
 </html>
