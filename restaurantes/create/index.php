@@ -223,7 +223,10 @@
 									</div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
-								      <button type="submit" class="btn btn-primary">Sign in</button>
+										<button class="btn btn-primary" type="submit">
+													<i class="fa fa-save"></i>
+													Submit
+												</button>
 								    </div>
 								  </div>
 								</form>
