@@ -72,73 +72,73 @@
 								  <div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restName" placeholder="Nombre">
+								      <input type="text" class="form-control" name="restName" placeholder="Nombre">
 								    </div>
 								  </div>
 									<div class="form-group">
 								    <label for="restCat" class="col-sm-2 control-label">Categoria:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restCat" placeholder="Categoria">
+								      <input type="text" class="form-control" name="restCat" placeholder="Categoria">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restZone" class="col-sm-2 control-label">Zona:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restZone" placeholder="Zona">
+								      <input type="text" class="form-control" name="restZone" placeholder="Zona">
 								    </div>
 									</div>									
 								  <div class="form-group">
 								    <label class="col-sm-2 control-label">Dirección:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restAddr" class="form-control" placeholder="Direccion" rows="3"></textarea>
+								      <textarea name="restAddr" class="form-control" placeholder="Direccion" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restTcom" class="col-sm-2 control-label">Tipo de comida:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restTcom" placeholder="Tipo">
+								      <input type="text" class="form-control" name="restTcom" placeholder="Tipo">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restPrice" class="col-sm-2 control-label">Precio:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="1" id="restPrice" placeholder="$">
+								      <input type="number" class="form-control" min="1" name="restPrice" placeholder="$">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Incluye:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
+								      <textarea name="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Introducción:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
+								      <textarea name="restIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 1:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
+								      <textarea name="restP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 2:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
+								      <textarea name="restP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 3:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
+								      <textarea name="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 											<label class="col-md-2 control-label">Logo</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restLogo">
+												<input type="file" class="btn btn-default" name="restLogo">
 												<p class="help-block">
 													qwerty
 												</p>
@@ -147,7 +147,7 @@
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Principal</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restImgp">
+												<input type="file" class="btn btn-default" name="restImgp">
 												<p class="help-block">
 													qwerty
 												</p>
@@ -156,13 +156,13 @@
 									<div class="form-group">
 								    <label for="restVideo" class="col-sm-2 control-label">Link Video</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restVideo" placeholder="Video">
+								      <input type="text" class="form-control" name="restVideo" placeholder="Video">
 								    </div>
 									</div>
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen 2</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restImg2">
+												<input type="file" class="btn btn-default" name="restImg2">
 												<p class="help-block">
 													qwerty
 												</p>
@@ -171,7 +171,7 @@
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen 3</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restImg3">
+												<input type="file" class="btn btn-default" name="restImg3">
 												<p class="help-block">
 													qwerty
 												</p>
@@ -180,19 +180,19 @@
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Frase:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restFrase" class="form-control" placeholder="Frase" rows="3"></textarea>
+								      <textarea name="restFrase" class="form-control" placeholder="Frase" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Editorial:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restEdit" class="form-control" placeholder="Editorial" rows="3"></textarea>
+								      <textarea name="restEdit" class="form-control" placeholder="Editorial" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 											<label class="col-md-2 control-label">Logo Editorial</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restLogoEdit">
+												<input type="file" class="btn btn-default" id="restLogoEdit" name="restLogoEdit">
 												<p class="help-block">
 													qwerty
 												</p>
@@ -201,19 +201,19 @@
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Sugeridos:</label>
 								    <div class="col-sm-10">
-								      <textarea id="restSug" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
+								      <textarea name="restSug" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas</label>
+								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="restCoord" placeholder="Coordenadas">
+								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restOrdDeli" class="col-sm-2 control-label">Ordenes Deli:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" id="restOrdDeli" placeholder="#">
+								      <input type="number" class="form-control" min="0" name="restOrdDeli" placeholder="#">
 								    </div>
 									</div>
 									<div class="form-group">
@@ -251,14 +251,20 @@
 		<script src="../../js/custom.js"></script>
 		<script>
 		jQuery("#btn-submit").click(function(e){
+			var formElement = document.getElementById("new-rest");
+			var form_data = new FormData(formElement); 
     	var url = "../../model/restaurantes/Create.php"; // the script where you handle the form input.
     	jQuery.ajax({
+					 dataType: 'text',  // what to expect back from the PHP script, if anything
+           cache: false,
+           contentType: false,
+           processData: false,
            type: "POST",
            url: url,
-           data: jQuery("#new-rest").serialize(), // serializes the form's elements.
+           data: form_data, // serializes the form's elements.
            success: function(data)
            {
-               console.log(data); // show response from the php script.
+               alert(data); // show response from the php script.
            }
          });
     		e.preventDefault(); // avoid to execute the actual submit of the form.
