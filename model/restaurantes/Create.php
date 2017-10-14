@@ -42,21 +42,28 @@ try{
     $directory=$pathRest.$lastRegister;
     if (!file_exists($directory)) {
         mkdir($directory, 0777, true);
+        mkdir($directory."/logo", 0777, true);
+        mkdir($directory."/imgP", 0777, true);
+        mkdir($directory."/img2", 0777, true);
+        mkdir($directory."/img3", 0777, true);
+        mkdir($directory."/logoE", 0777, true);
+        
+        
     }
     if($restLogo != null){
-        copy($_FILES['restLogo']['tmp_name'],$directory."/". $_FILES["restLogo"]['name']);        
+        copy($_FILES['restLogo']['tmp_name'],$directory."/logo/". $_FILES["restLogo"]['name']);        
     }
     if($restImgp != null){
-        copy($_FILES['restImgp']['tmp_name'],$directory."/". $_FILES["restImgp"]['name']);        
+        copy($_FILES['restImgp']['tmp_name'],$directory."/imgP/". $_FILES["restImgp"]['name']);        
     }
     if($restImg2 != null){
-        copy($_FILES['restImg2']['tmp_name'],$directory."/". $_FILES["restImg2"]['name']);        
+        copy($_FILES['restImg2']['tmp_name'],$directory."/img2/". $_FILES["restImg2"]['name']);        
     }
     if($restImg3 != null){
-        copy($_FILES['restImg3']['tmp_name'],$directory."/". $_FILES["restImg3"]['name']);        
+        copy($_FILES['restImg3']['tmp_name'],$directory."/img3/". $_FILES["restImg3"]['name']);        
     }
     if($restLogoEdit != null){
-        copy($_FILES['restLogoEdit']['tmp_name'],$directory."/". $_FILES["restLogoEdit"]['name']);        
+        copy($_FILES['restLogoEdit']['tmp_name'],$directory."/logoE/". $_FILES["restLogoEdit"]['name']);        
     }
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
     //Permisos
