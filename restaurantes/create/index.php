@@ -265,7 +265,8 @@
            success: function(data)
            {
                alert(data); // show response from the php script.
-           }
+					     window.location.href = '../';
+					 }
          });
     		e.preventDefault(); // avoid to execute the actual submit of the form.
 		});
