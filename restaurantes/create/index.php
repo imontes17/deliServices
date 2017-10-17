@@ -78,7 +78,16 @@
 									<div class="form-group">
 								    <label for="restCat" class="col-sm-2 control-label">Categoria:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restCat" placeholder="Categoria">
+										<select class="form-control" name="restCat">
+  										<option value="1-Diamante">Diamante</option>
+  										<option value="2-Mixologia">Mixologia</option>
+  										<option value="3-Platino">Platino</option>
+  										<option value="4-Plata">Plata</option>
+											<option value="5-Antojo">Antojo</option>
+  										<option value="6-Coctel">Coctel</option>
+  										<option value="7-Postres">Postres</option>
+  										<option value="8-Verdes">Verdes</option>
+										</select>
 								    </div>
 									</div>
 									<div class="form-group">
