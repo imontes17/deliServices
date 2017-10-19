@@ -1,3 +1,7 @@
+<?php
+require_once "../model/restaurantes/Read.php";
+$restaurantes=getRestaurants();
+?>
 <!DOCTYPE html>
 <html  lang="es">
   <head>
@@ -63,7 +67,35 @@
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
-					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Restaurante</button></a>					
+					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Restaurante</button></a>	
+					<div class="panel-body">
+						<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Nombre</th>
+											<th>Categoria</th>
+											<th>Comida</th>
+											<th>Precio</th>		
+											<th>------</th>
+											<th>------</th>											
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($restaurantes as $rest):?>
+											<tr>
+												<td><?php echo $rest["id_restaurant"];?></td>
+												<td><?php echo $rest["name_restaurant"];?></td>
+												<td><?php echo $rest["category"];?></td>
+												<td><?php echo $rest["tipo_comida"];?></td>
+												<td>$ <?php echo $rest["precio"];?></td>
+												<td><!--<a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a>--></td>
+												<td><a href="" onclick="deleteRest(<?php echo $rest["id_restaurant"]?>)">Eliminar</a></td>												
+											</tr>
+										<?php endforeach;?>
+									</tbody>
+								</table>
+					</div>				
 		  	</div>
 		  </div>
 		</div>
@@ -81,6 +113,30 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/custom.js"></script>
+		<script src="../js/custom.js"></script>
+		<script>
+			function deleteRest(id){
+				var formData = new FormData();
+				formData.append("restId",id);
+				if (confirm("¿Desea Eliminar el Restaurante?") == true) {
+				var url = "../../model/restaurantes/Delete.php"; // the script where you handle the form input.
+    		jQuery.ajax({
+					 dataType: 'text',  // what to expect back from the PHP script, if anything
+           cache: false,
+           contentType: false,
+           processData: false,
+           type: "POST",
+           url: url,
+           data: formData, // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+					     window.reload();
+					 }
+         });
+    			e.preventDefault(); // avoid to execute the actual submit of the form.
+				}
+			}
+		</script>
   </body>
 </html>
