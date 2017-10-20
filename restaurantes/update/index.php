@@ -1,3 +1,11 @@
+<?php
+require_once "../../model/restaurantes/Read.php";
+$restaurante=getSingleRestaurant($_GET["id"]);
+//Catch posible error
+if(!is_array($restaurante)){
+	header('Location: ../');
+}
+?>
 <!DOCTYPE html>
 <html  lang="es">
   <head>
@@ -65,7 +73,7 @@
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
 				<div class="panel-heading">
-					  <div class="panel-title">Información del Restaurante</div>
+					  <div class="panel-title">Edición del Restaurante</div>
 				</div>
 			  				<div class="panel-body">
 			  					<form id="new-rest" class="form-horizontal" role="form">
