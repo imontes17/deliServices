@@ -3,7 +3,7 @@ Class Connection {
     private  $server = "mysql:host=localhost;dbname=deli";
     private  $user = "root";
     private  $pass = "mysql";
-    private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
+    private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'");
     protected $con;
         
     public function openConnection()

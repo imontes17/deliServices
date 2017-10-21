@@ -19,7 +19,7 @@ function getAllRestaurants(){
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $arrayOk = setImagesRoute($stm->fetchAll());
-        $result = json_encode($arrayOk);
+        $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
         return $result;
     }catch(PDOException $e){
         return $e->getMessage();
@@ -33,7 +33,7 @@ function getRestaurantsByCategory($catId){
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $arrayOk = setImagesRoute($stm->fetchAll());
-        $result = json_encode($arrayOk);
+        $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
         return $result;
     }catch(PDOException $e){
         return $e->getMessage();
