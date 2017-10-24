@@ -76,17 +76,18 @@ if(!is_array($restaurante)){
 					  <div class="panel-title">Edición del Restaurante</div>
 				</div>
 			  				<div class="panel-body">
-			  					<form id="new-rest" class="form-horizontal" role="form">
+			  					<form id="update-rest" class="form-horizontal" role="form">
+									<input type="hidden" name="restId" value="<?php echo $_GET["id"]?>">									
 								  <div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restName" placeholder="Nombre">
+								      <input type="text" class="form-control" name="restName" placeholder="Nombre" value="<?php echo $restaurante['name_restaurant']?>">
 								    </div>
 								  </div>
 									<div class="form-group">
 								    <label for="restCat" class="col-sm-2 control-label">Categoria:</label>
 								    <div class="col-sm-10">
-										<select class="form-control" name="restCat">
+										<select id="categories" class="form-control" name="restCat">
   										<option value="1-Diamante">Diamante</option>
   										<option value="2-Mixologia">Mixologia</option>
   										<option value="3-Platino">Platino</option>
@@ -101,55 +102,55 @@ if(!is_array($restaurante)){
 									<div class="form-group">
 								    <label for="restZone" class="col-sm-2 control-label">Zona:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restZone" placeholder="Zona">
+								      <input type="text" class="form-control" name="restZone" placeholder="Zona" value="<?php echo $restaurante['zona']?>">
 								    </div>
 									</div>									
 								  <div class="form-group">
 								    <label class="col-sm-2 control-label">Dirección:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restAddr" class="form-control" placeholder="Direccion" rows="3"></textarea>
+								      <textarea name="restAddr" class="form-control" placeholder="Direccion" rows="3"><?php echo $restaurante['direccion']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restTcom" class="col-sm-2 control-label">Tipo de comida:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restTcom" placeholder="Tipo">
+								      <input type="text" class="form-control" name="restTcom" placeholder="Tipo" value="<?php echo $restaurante['tipo_comida']?>">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restPrice" class="col-sm-2 control-label">Precio:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="1" name="restPrice" placeholder="$">
+								      <input type="number" class="form-control" min="1" name="restPrice" placeholder="$" value="<?php echo $restaurante['precio']?>">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Incluye:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
+								      <textarea name="restInclu" class="form-control" placeholder="Incluye" rows="3"><?php echo $restaurante['incluye']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Introducción:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
+								      <textarea name="restIntro" class="form-control" placeholder="Introducción" rows="3"><?php echo $restaurante['introduccion']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 1:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
+								      <textarea name="restP1" class="form-control" placeholder="Parrafo 1" rows="3"><?php echo $restaurante['p1']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 2:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
+								      <textarea name="restP2" class="form-control" placeholder="Parrafo 2" rows="3"><?php echo $restaurante['p2']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 3:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
+								      <textarea name="restP3" class="form-control" placeholder="Parrafo 3" rows="3"><?php echo $restaurante['p3']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
@@ -157,7 +158,7 @@ if(!is_array($restaurante)){
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restLogo">
 												<p class="help-block">
-													qwerty
+													Ingresa una imagen con formato .png o .jpg
 												</p>
 											</div>
 									</div>
@@ -166,14 +167,14 @@ if(!is_array($restaurante)){
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImgp">
 												<p class="help-block">
-													qwerty
+													Ingresa una imagen con formato .png o .jpg
 												</p>
 											</div>
 									</div>
 									<div class="form-group">
 								    <label for="restVideo" class="col-sm-2 control-label">Link Video</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restVideo" placeholder="Video">
+								      <input type="text" class="form-control" name="restVideo" placeholder="Video"value="<?php echo $restaurante['link_video']?>">
 								    </div>
 									</div>
 									<div class="form-group">
@@ -181,7 +182,7 @@ if(!is_array($restaurante)){
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImg2">
 												<p class="help-block">
-													qwerty
+													Ingresa una imagen con formato .png o .jpg
 												</p>
 											</div>
 									</div>
@@ -190,20 +191,20 @@ if(!is_array($restaurante)){
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImg3">
 												<p class="help-block">
-													qwerty
+													Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Frase:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restFrase" class="form-control" placeholder="Frase" rows="3"></textarea>
+								      <textarea name="restFrase" class="form-control" placeholder="Frase" rows="3"><?php echo $restaurante['frase']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Editorial:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restEdit" class="form-control" placeholder="Editorial" rows="3"></textarea>
+								      <textarea name="restEdit" class="form-control" placeholder="Editorial" rows="3"><?php echo $restaurante['editorial']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
@@ -211,38 +212,38 @@ if(!is_array($restaurante)){
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" id="restLogoEdit" name="restLogoEdit">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Sugeridos:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restSug" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
+								      <textarea name="restSug" class="form-control" placeholder="Sugeridos" rows="3"><?php echo $restaurante['sugeridos']?></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas">
+								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas" value="<?php echo $restaurante['cordenadas']?>">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restOrdDeli" class="col-sm-2 control-label">Ordenes Deli:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" name="restOrdDeli" placeholder="#">
+								      <input type="number" class="form-control" min="0" name="restOrdDeli" placeholder="#" value="<?php echo $restaurante['no_ordenes_deli']?>">
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label for="restOrdAdi" class="col-sm-2 control-label">Ordenes Adicionales:</label>
 								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" name="restOrdAdi" placeholder="#">
+								      <input type="number" class="form-control" min="0" name="restOrdAdi" placeholder="#" value="<?php echo $restaurante['no_ordenes_adicionales']?>">
 								    </div>
 									</div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
 										<button id="btn-submit" class="btn btn-primary" type="button">
-													Guardar
+													Actualizar
 										</button>
 								    </div>
 								  </div>
@@ -267,10 +268,15 @@ if(!is_array($restaurante)){
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../../js/custom.js"></script>
 		<script>
+		
+		var categorySelected = <?php echo $restaurante["deli_categories_id_category"]?>;
+		var categories = document.getElementById("categories");
+		categories.options.selectedIndex = categorySelected - 1;
+
 		jQuery("#btn-submit").click(function(e){
-			var formElement = document.getElementById("new-rest");
+			var formElement = document.getElementById("update-rest");
 			var form_data = new FormData(formElement); 
-    	var url = "../../model/restaurantes/Create.php"; // the script where you handle the form input.
+    	var url = "../../model/restaurantes/Update.php"; // the script where you handle the form input.
     	jQuery.ajax({
 					 dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,

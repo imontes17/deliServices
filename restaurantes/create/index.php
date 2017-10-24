@@ -115,6 +115,15 @@
 								    </div>
 									</div>
 									<div class="form-group">
+											<label class="col-md-2 control-label">Imagen Precio:</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" name="restImgPrecio">
+												<p class="help-block">
+												Ingresa una imagen con formato .png o jpg
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
 								    <label class="col-sm-2 control-label">Incluye:</label>
 								    <div class="col-sm-10">
 								      <textarea name="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
@@ -149,7 +158,7 @@
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restLogo">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
@@ -158,7 +167,7 @@
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImgp">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
@@ -173,7 +182,7 @@
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImg2">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
@@ -182,7 +191,7 @@
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" name="restImg3">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>
@@ -203,7 +212,7 @@
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default" id="restLogoEdit" name="restLogoEdit">
 												<p class="help-block">
-													qwerty
+												Ingresa una imagen con formato .png o jpg
 												</p>
 											</div>
 									</div>

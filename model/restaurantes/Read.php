@@ -21,10 +21,10 @@
         try{
             $database = new Connection();
             $db = $database->openConnection();
-            $stm = $db->prepare("SELECT * FROM deli_restaurant WHERE id_restaurant = $restId");
+            $stm = $db->prepare("SELECT * FROM deli_restaurant WHERE id_restaurant = $restId LIMIT 1");
             $stm->execute();
             $stm->setFetchMode(PDO::FETCH_ASSOC); 
-            return $stm->fetchAll();
+            return $stm->fetch();
          }
          catch (PDOException $e)
          {
