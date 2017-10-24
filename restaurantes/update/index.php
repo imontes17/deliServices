@@ -93,7 +93,7 @@ if(!is_array($restaurante)){
   										<option value="3-Platino">Platino</option>
   										<option value="4-Plata">Plata</option>
 											<option value="5-Antojo">Antojo</option>
-  										<option value="6-Coctel">Coctel</option>
+  										<option value="6-Bares">Bares</option>
   										<option value="7-Postres">Postres</option>
   										<option value="8-Verdes">Verdes</option>
 										</select>
@@ -122,6 +122,15 @@ if(!is_array($restaurante)){
 								    <div class="col-sm-10">
 								      <input type="number" class="form-control" min="1" name="restPrice" placeholder="$" value="<?php echo $restaurante['precio']?>">
 								    </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Imagen Precio:</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" name="restImgPrecio">
+												<p class="help-block">
+												Ingresa una imagen con formato .png o jpg
+												</p>
+											</div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Incluye:</label>

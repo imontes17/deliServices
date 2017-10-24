@@ -84,7 +84,7 @@
   										<option value="3-Platino">Platino</option>
   										<option value="4-Plata">Plata</option>
 											<option value="5-Antojo">Antojo</option>
-  										<option value="6-Coctel">Coctel</option>
+  										<option value="6-Bares">Bares</option>
   										<option value="7-Postres">Postres</option>
   										<option value="8-Verdes">Verdes</option>
 										</select>
