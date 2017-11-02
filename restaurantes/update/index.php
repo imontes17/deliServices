@@ -5,6 +5,7 @@ $restaurante=getSingleRestaurant($_GET["id"]);
 if(!is_array($restaurante)){
 	header('Location: ../');
 }
+$imagesPath=getImagesPath($restaurante);
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -78,7 +79,14 @@ if(!is_array($restaurante)){
 			  				<div class="panel-body">
 			  					<form id="update-rest" class="form-horizontal" role="form">
 									<input type="hidden" name="restId" value="<?php echo $_GET["id"]?>">									
-								  <div class="form-group">
+									<input type="hidden" name="imgPrecioOld" value="<?php echo $restaurante['img_price']?>">									
+									<input type="hidden" name="logoOld" value="<?php echo $restaurante['logo']?>">									
+									<input type="hidden" name="imgpOld" value="<?php echo $restaurante['imagen_principal']?>">									
+									<input type="hidden" name="img2Old" value="<?php echo $restaurante['imagen_2']?>">									
+									<input type="hidden" name="img3Old" value="<?php echo $restaurante['imagen_3']?>">									
+									<input type="hidden" name="logoEditOld" value="<?php echo $restaurante['logo_editorial']?>">									
+								  
+									<div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
 								      <input type="text" class="form-control" name="restName" placeholder="Nombre" value="<?php echo $restaurante['name_restaurant']?>">
@@ -126,10 +134,13 @@ if(!is_array($restaurante)){
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Precio:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImgPrecio">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
+												<input type="file" class="btn btn-default file" name="restImgPrecio">
+												<?php if(isset($imagesPath[restImgPrecio])):?>
+													<p id="restImgPrecio-img" class="help-block">
+													<img src="<?php echo $imagesPath[restImgPrecio]?>"  height="100" width="100"/>
+														Imagen Previa.
+													</p>
+												<?php endif;?>
 											</div>
 									</div>
 									<div class="form-group">
@@ -165,19 +176,25 @@ if(!is_array($restaurante)){
 									<div class="form-group">
 											<label class="col-md-2 control-label">Logo</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restLogo">
-												<p class="help-block">
-													Ingresa una imagen con formato .png o .jpg
-												</p>
+												<input type="file" class="btn btn-default file" name="restLogo">
+												<?php if(isset($imagesPath[restLogo])):?>
+													<p id="restLogo-img" class="help-block">
+													<img  src="<?php echo $imagesPath[restLogo]?>"  height="100" width="100"/>
+														Imagen Previa.
+													</p>
+												<?php endif;?>
 											</div>
 									</div>
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Principal</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImgp">
-												<p class="help-block">
-													Ingresa una imagen con formato .png o .jpg
-												</p>
+												<input type="file" class="btn btn-default file" name="restImgp">
+												<?php if(isset($imagesPath[restImgp])):?>
+													<p id="restImgp-img" class="help-block">
+													<img  src="<?php echo $imagesPath[restImgp]?>"  height="100" width="100"/>
+														Imagen Previa.
+													</p>
+												<?php endif;?>
 											</div>
 									</div>
 									<div class="form-group">
@@ -189,21 +206,27 @@ if(!is_array($restaurante)){
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen 2</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImg2">
-												<p class="help-block">
-													Ingresa una imagen con formato .png o .jpg
-												</p>
+												<input type="file" class="btn btn-default file" name="restImg2">
+												<?php if(isset($imagesPath[restImg2])):?>
+													<p id="restImg2-img" class="help-block">
+													<img  src="<?php echo $imagesPath[restImg2]?>"  height="100" width="100"/>
+														Imagen Previa.
+													</p>
+												<?php endif;?>
 											</div>
 									</div>
 									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen 3</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImg3">
-												<p class="help-block">
-													Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
+									<label class="col-md-2 control-label">Imagen 3</label>
+									<div class="col-md-10">
+										<input type="file" class="btn btn-default file" name="restImg3">
+										<?php if(isset($imagesPath[restImg3])):?>
+											<p id="restImg3-img" class="help-block">
+											<img  src="<?php echo $imagesPath[restImg3]?>"  height="100" width="100"/>
+												Imagen Previa.
+											</p>
+										<?php endif;?>
 									</div>
+								</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Frase:</label>
 								    <div class="col-sm-10">
@@ -219,10 +242,13 @@ if(!is_array($restaurante)){
 									<div class="form-group">
 											<label class="col-md-2 control-label">Logo Editorial</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restLogoEdit" name="restLogoEdit">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
+												<input type="file" class="btn btn-default file" id="restLogoEdit" name="restLogoEdit">
+												<?php if(isset($imagesPath[restLogoEdit])):?>
+												<p id="restLogoEdit-img" class="help-block">
+												<img  src="<?php echo $imagesPath[restLogoEdit]?>"  height="100" width="100"/>
+													Imagen Previa.
 												</p>
+											<?php endif;?>
 											</div>
 									</div>
 									<div class="form-group">
@@ -277,7 +303,10 @@ if(!is_array($restaurante)){
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../../js/custom.js"></script>
 		<script>
-		
+		jQuery(".file").change(function(element){
+			var name = jQuery(element.target).attr("name");
+			jQuery("#"+name+"-img").hide();
+		});
 		var categorySelected = <?php echo $restaurante["deli_categories_id_category"]?>;
 		var categories = document.getElementById("categories");
 		categories.options.selectedIndex = categorySelected - 1;

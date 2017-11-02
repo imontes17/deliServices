@@ -89,7 +89,7 @@ $restaurantes=getRestaurants();
 												<td><?php echo $rest["category"];?></td>
 												<td><?php echo $rest["tipo_comida"];?></td>
 												<td>$ <?php echo $rest["precio"];?></td>
-												<td><!--<a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a>--></td>
+												<td><a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a></td>
 												<td><a href="" onclick="deleteRest(<?php echo $rest["id_restaurant"]?>)">Eliminar</a></td>												
 											</tr>
 										<?php endforeach;?>
