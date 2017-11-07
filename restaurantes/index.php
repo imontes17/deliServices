@@ -131,7 +131,7 @@ $restaurantes=getRestaurants();
            success: function(data)
            {
                alert(data); // show response from the php script.
-					     window.reload();
+					     location.reload();
 					 }
          });
     			e.preventDefault(); // avoid to execute the actual submit of the form.

@@ -36,6 +36,8 @@ $restSug   = $_POST["restSug"]? $_POST["restSug"] : null;
 $restCoord = $_POST["restCoord"]? $_POST["restCoord"] : null;
 $restOrdDeli = $_POST["restOrdDeli"]? $_POST["restOrdDeli"] : null;
 $restOrdAdi = $_POST["restOrdAdi"] ? $_POST["restOrdAdi"] : null ;
+$restDays  = $_POST["restDays"];
+$restHours  = $_POST["restHours"];
 //copy($_FILES['restLogoEdit']['tmp_name'],$pathRest. $_FILES["restLogoEdit"]['name']);
 
 try{
@@ -43,8 +45,8 @@ try{
    $db = $database->openConnection();
    $stm = $db->prepare("
         UPDATE deli_restaurant 
-        SET id_restaurant=:id,name_restaurant=:name,category=:cat,zona=:zone,direccion=:addr,tipo_comida=:tcom,precio=:precio,img_price=:imgPrice,incluye=:inclu,introduccion=:intro,p1=:p1,p2=:p2,p3=:p3,logo=:logo,imagen_principal=:imgP,link_video=:video,imagen_2=:img2,imagen_3=:img3,frase=:frase,editorial=:edit,logo_editorial=:ledit,sugeridos=:sug,cordenadas=:coord,no_ordenes_deli=:ordD,no_ordenes_adicionales=:ordA,deli_categories_id_category=:catId WHERE id_restaurant=:id");
-    $stm->execute(array(":id" =>$restId,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,'imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0])); 
+        SET id_restaurant=:id,name_restaurant=:name,category=:cat,zona=:zone,direccion=:addr,tipo_comida=:tcom,precio=:precio,img_price=:imgPrice,incluye=:inclu,introduccion=:intro,p1=:p1,p2=:p2,p3=:p3,logo=:logo,imagen_principal=:imgP,link_video=:video,imagen_2=:img2,imagen_3=:img3,frase=:frase,editorial=:edit,logo_editorial=:ledit,sugeridos=:sug,cordenadas=:coord,no_ordenes_deli=:ordD,no_ordenes_adicionales=:ordA,deli_categories_id_category=:catId,days=:days,hours=:hours WHERE id_restaurant=:id");
+    $stm->execute(array(":id" =>$restId,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,'imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0],':days'=>$restDays,':hours'=>$restHours)); 
 
     
     $directory=$pathRest.$restId;
