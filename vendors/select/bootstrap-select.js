@@ -836,7 +836,7 @@
         size: 'auto',
         title: null,
         selectedTextFormat : 'values',
-        noneSelectedText : 'Nothing selected',
+        noneSelectedText : 'Selecciona... ',
         countSelectedText: '{0} of {1} selected',
         width: false,
         container: false,
