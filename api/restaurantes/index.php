@@ -23,4 +23,12 @@ $app->get('/categoria/{id}', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->get('/{id}/schedule/{dayWeek}', function (Request $request, Response $response) {
+    $restId = $request->getAttribute('id');
+    $dayWeek = $request->getAttribute('dayWeek');    
+    $json  = scheduleValidation($restId,$dayWeek);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->run();

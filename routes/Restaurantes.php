@@ -53,4 +53,36 @@ $pathRest='/media/restaurantes/';
     }  
     return $array; 
 }
+function scheduleValidation($restId,$dayWeek){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT hours,days FROM deli_restaurant WHERE id_restaurant=$restId LIMIT 1");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $restaurante=$stm->fetch();
+        
+        if(!is_array($restaurante)){
+            $response["error"]="Ha ocurrido un error,por favor vuelve a intentarlo";
+            return json_encode($response,JSON_UNESCAPED_UNICODE);            
+        }
+        if($dayWeek>6 || $dayWeek<0 || !is_numeric($dayWeek)){
+            $response["error"]="Dia de la semana invalido debe ser en el rango 0-6";
+            return json_encode($response,JSON_UNESCAPED_UNICODE);            
+        }
+        $pos = strpos($restaurante["days"], $dayWeek);
+        if($pos===false){
+            $hours=explode(",",$restaurante["hours"]);
+            $response["blocked_hours"]=$hours;
+            return json_encode($response,JSON_UNESCAPED_UNICODE);            
+
+        }else{
+            //error dia bloqueado
+            $response["error"]="El dia que seleccionaste no tiene servicio disponible";
+            return json_encode($response,JSON_UNESCAPED_UNICODE);            
+        }
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
 ?>
