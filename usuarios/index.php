@@ -1,6 +1,6 @@
 <?php
-require_once "../model/restaurantes/Read.php";
-$restaurantes=getRestaurants();
+require_once "../model/usuarios/Read.php";
+$usuarios=getUsuarios();
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -61,37 +61,34 @@ $restaurantes=getRestaurants();
                 <ul class="nav">
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                    <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
-                    <li><a href="../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
-									</ul>
+										<li><a href="../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
+                    <li class="current"><a href="usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>										
+                </ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
-					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Restaurante</button></a>	
 					<div class="panel-body">
 						<table class="table table-hover">
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Nombre</th>
-											<th>Categoria</th>
-											<th>Comida</th>
-											<th>Precio</th>		
+											<th>Nombre de Usuario</th>
+											<th>Email</th>											
+											<th>Token App</th>
+											<th>Comida Favorita</th>
 											<th>------</th>
-											<th>------</th>											
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($restaurantes as $rest):?>
+										<?php foreach($usuarios as $user):?>
 											<tr>
-												<td><?php echo $rest["id_restaurant"];?></td>
-												<td><?php echo $rest["name_restaurant"];?></td>
-												<td><?php echo $rest["category"];?></td>
-												<td><?php echo $rest["tipo_comida"];?></td>
-												<td>$ <?php echo $rest["precio"];?></td>
-												<td><a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a></td>
-												<td><a href="" onclick="deleteRest(<?php echo $rest["id_restaurant"]?>)">Eliminar</a></td>												
+												<td><?php echo $user["id"];?></td>
+												<td><?php echo $user["username"];?></td>
+												<td><?php echo $user["email"];?></td>												
+												<td><?php echo $user["token"];?></td>
+												<td>************</td>
+												<td><a href="" onclick="deleteUser(<?php echo $user["id"]?>)">Eliminar</a></td>												
 											</tr>
 										<?php endforeach;?>
 									</tbody>
@@ -116,11 +113,11 @@ $restaurantes=getRestaurants();
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/custom.js"></script>
 		<script>
-			function deleteRest(id){
+			function deleteUser(id){
 				var formData = new FormData();
-				formData.append("restId",id);
-				if (confirm("¿Desea Eliminar el Restaurante?") == true) {
-				var url = "../../model/restaurantes/Delete.php"; // the script where you handle the form input.
+				formData.append("userId",id);
+				if (confirm("¿Desea Eliminar al Usuario?") == true) {
+				var url = "../../model/usuarios/Delete.php"; // the script where you handle the form input.
     		jQuery.ajax({
 					 dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,

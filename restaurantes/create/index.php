@@ -64,7 +64,8 @@
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
                     <li class="current"><a href="../../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
-                </ul>
+										<li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
+									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
