@@ -1,6 +1,6 @@
 <?php
-require_once "../model/restaurantes/Read.php";
-$restaurantes=getRestaurants();
+/*require_once "../model/trivias/Read.php";
+$trivias=getTrivias();*/
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -61,38 +61,36 @@ $restaurantes=getRestaurants();
                 <ul class="nav">
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                    <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
+                    <li><a href="../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
                     <li><a href="../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
-										<li><a href="../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
+                    <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
-					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Restaurante</button></a>	
+					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Trivia</button></a>	
 					<div class="panel-body">
 						<table class="table table-hover">
 									<thead>
 										<tr>
 											<th>#</th>
 											<th>Nombre</th>
-											<th>Categoria</th>
-											<th>Comida</th>
-											<th>Precio</th>		
-											<th>------</th>
-											<th>------</th>											
+											<th>Label Fecha</th>
+											<th>Valor Premio</th>
+											<th>Vigencia</th>		
+											<th>Status</th>										
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($restaurantes as $rest):?>
+										<?php foreach($trivias as $trivia):?>
 											<tr>
-												<td><?php echo $rest["id_restaurant"];?></td>
-												<td><?php echo $rest["name_restaurant"];?></td>
-												<td><?php echo $rest["category"];?></td>
-												<td><?php echo $rest["tipo_comida"];?></td>
-												<td>$ <?php echo $rest["precio"];?></td>
-												<td><a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a></td>
-												<td><a href="" onclick="deleteRest(<?php echo $rest["id_restaurant"]?>)">Eliminar</a></td>												
+												<td><?php echo $trivia["id"];?></td>
+												<td><?php echo $trivia["name"];?></td>
+												<td><?php echo $trivia["label"];?></td>
+												<td>$ <?php echo $trivia["premio"];?></td>
+												<td><?php echo $trivia["vigencia"];?></td>
+												<td><?php echo $trivia["status"];?></td>												
 											</tr>
 										<?php endforeach;?>
 									</tbody>

@@ -74,6 +74,7 @@ $imagesPath=getImagesPath($restaurante);
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
                     <li class="current"><a href="../../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
                     <li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 											
+										<li><a href="../../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 									</ul>
              </div>
 		  </div>
