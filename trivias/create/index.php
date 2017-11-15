@@ -75,227 +75,64 @@
 					  <div class="panel-title">Información de Trivia</div>
 				</div>
 			  				<div class="panel-body">
-			  					<form id="new-rest" class="form-horizontal" role="form">
+			  					<form id="new-triv" class="form-horizontal" role="form">
 								  <div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restName" placeholder="Nombre">
+								      <input type="text" class="form-control" name="trivName" placeholder="Nombre">
 								    </div>
 								  </div>
 									<div class="form-group">
-								    <label for="restCat" class="col-sm-2 control-label">Categoria:</label>
+								    <label for="trivFecha" class="col-sm-2 control-label">Fecha:</label>
 								    <div class="col-sm-10">
-										<select class="form-control" name="restCat">
-  										<option value="1-Diamante">Diamante</option>
-  										<option value="2-Mixologia">Mixologia</option>
-  										<option value="3-Platino">Platino</option>
-  										<option value="4-Plata">Plata</option>
-											<option value="5-Antojo">Antojo</option>
-  										<option value="6-Bares">Bares</option>
-  										<option value="7-Postres">Postres</option>
-  										<option value="8-Verdes">Verdes</option>
-										</select>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restZone" class="col-sm-2 control-label">Zona:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restZone" placeholder="Zona">
+								      <input type="text" class="form-control" name="trivFecha" placeholder="Fecha">
 								    </div>
 									</div>									
 								  <div class="form-group">
-								    <label class="col-sm-2 control-label">Dirección:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restAddr" class="form-control" placeholder="Direccion" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restTcom" class="col-sm-2 control-label">Tipo de comida:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restTcom" placeholder="Tipo">
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restPrice" class="col-sm-2 control-label">Precio:</label>
-								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="1" name="restPrice" placeholder="$">
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen Precio:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImgPrecio">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
 								    <label class="col-sm-2 control-label">Incluye:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
+								      <textarea name="trivInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Introducción:</label>
+								    <label for="trivVig" class="col-sm-2 control-label">Vigencia:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
+								      <input type="text" class="form-control" name="trivVig" placeholder="Vigencia">
 								    </div>
-									</div>
+									</div>	
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Parrafo 1:</label>
+								    <label for="trivPremio" class="col-sm-2 control-label">Premio:</label>
 								    <div class="col-sm-10">
-								      <textarea name="restP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
+								      <input type="number" class="form-control" min="1" name="trivPremio" placeholder="$">
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Parrafo 2:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Parrafo 3:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Logo</label>
+											<label class="col-md-2 control-label">Logo Blanco:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restLogo">
+												<input type="file" class="btn btn-default" name="trivLogoB">
 												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
+												Ingresa una imagen con formato .png
 												</p>
 											</div>
 									</div>
 									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen Principal</label>
+											<label class="col-md-2 control-label">Logo Negro:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImgp">
+												<input type="file" class="btn btn-default" name="trivLogoN">
 												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
+												Ingresa una imagen con formato .png
 												</p>
 											</div>
 									</div>
 									<div class="form-group">
-								    <label for="restVideo" class="col-sm-2 control-label">Link Video</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restVideo" placeholder="Video">
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen 2</label>
+											<label class="col-md-2 control-label">Imagen Principal:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImg2">
+												<input type="file" class="btn btn-default" name="trivImgP">
 												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
+												Ingresa una imagen con formato .png
 												</p>
 											</div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen 3</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="restImg3">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Frase:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restFrase" class="form-control" placeholder="Frase" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Editorial:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restEdit" class="form-control" placeholder="Editorial" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Logo Editorial</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="restLogoEdit" name="restLogoEdit">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Sugeridos:</label>
-								    <div class="col-sm-10">
-								      <textarea name="restSug" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas">
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restOrdDeli" class="col-sm-2 control-label">Ordenes Deli:</label>
-								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" name="restOrdDeli" placeholder="#">
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label for="restOrdAdi" class="col-sm-2 control-label">Ordenes Adicionales:</label>
-								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="0" name="restOrdAdi" placeholder="#">
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label  class="col-sm-2 control-label">Dias sin servicio:</label>
-								    <div class="col-sm-10">
-										<p>
-			  							<select id="restDays" class="selectpicker" multiple>
-												<option value="0">Domingo</option>												
-									      <option value="1">Lunes</option>
-									      <option value="2">Martes</option>
-												<option value="3">Miercoles</option>
-									      <option value="4">Jueves</option>
-									      <option value="5">Viernes</option>
-									      <option value="6">Sabado</option>
-									  </select>
-			  						</p>
-								    </div>
-									</div>
-									<div class="form-group">
-								    <label  class="col-sm-2 control-label">Horarios sin servicio:</label>
-								    <div class="col-sm-10">
-										<p>
-			  							<select id="restHours" class="selectpicker" multiple>
-									      <option value="0">00:00</option>
-									      <option value="1">01:00</option>
-												<option value="2">02:00</option>
-									      <option value="3">03:00</option>
-									      <option value="4">04:00</option>
-									      <option value="5">05:00</option>
-									      <option value="6">06:00</option>
-									      <option value="7">07:00</option>
-									      <option value="8">08:00</option>
-									      <option value="9">09:00</option>
-									      <option value="10">10:00</option>
-									      <option value="11">11:00</option>
-									      <option value="12">12:00</option>
-									      <option value="13">13:00</option>
-									      <option value="14">14:00</option>
-									      <option value="15">15:00</option>
-									      <option value="16">16:00</option>
-									      <option value="17">17:00</option>
-									      <option value="18">18:00</option>
-									      <option value="19">19:00</option>
-									      <option value="20">20:00</option>
-									      <option value="21">21:00</option>
-									      <option value="22">22:00</option>
-									      <option value="23">23:00</option>
-									  </select>
-			  						</p>
-								    </div>
-									</div>
+									</div>			
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
 										<button id="btn-submit" class="btn btn-primary" type="button">
@@ -350,7 +187,7 @@
     <script src="../../js/forms.js"></script>
 		<script>
 		jQuery("#btn-submit").click(function(e){
-			var formElement = document.getElementById("new-rest");
+			var formElement = document.getElementById("new-trivia");
 			var form_data = new FormData(formElement); 
 			form_data.append("restDays", $("#restDays").val());
 			form_data.append("restHours", $("#restHours").val());
