@@ -1,12 +1,12 @@
 <?php
     require_once __DIR__."/../Connection.php";
 
-    function getUsuarios()
+    function getTrivias()
     {
         try{
             $database = new Connection();
             $db = $database->openConnection();
-            $stm = $db->prepare("SELECT id,username,email,token FROM deli_user");
+            $stm = $db->prepare("SELECT * FROM deli_trivia");
             $stm->execute();
             $stm->setFetchMode(PDO::FETCH_ASSOC); 
             return $stm->fetchAll();

@@ -56,96 +56,312 @@
 	        </div>
 	     </div>
 	</div>
-    <div class="page-content">
-    	<div class="row">
+  <div class="page-content">
+    <div class="row">
 		  <div class="col-md-2">
 		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                    <li><a href="../../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
-										<li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
-										<li class="current"><a href="../../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
-									</ul>
-             </div>
+          <ul class="nav">
+          <!-- Main menu -->
+            <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+            <li><a href="../../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
+						<li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
+						<li class="current"><a href="../../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
+					</ul>
+        </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
-				<div class="panel-heading">
-					  <div class="panel-title">Información de Trivia</div>
-				</div>
-			  				<div class="panel-body">
-			  					<form id="new-triv" class="form-horizontal" role="form">
-								  <div class="form-group">
-								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="trivName" placeholder="Nombre">
-								    </div>
-								  </div>
-									<div class="form-group">
-								    <label for="trivFecha" class="col-sm-2 control-label">Fecha:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="trivFecha" placeholder="Fecha">
-								    </div>
-									</div>									
-								  <div class="form-group">
-								    <label class="col-sm-2 control-label">Incluye:</label>
-								    <div class="col-sm-10">
-								      <textarea name="trivInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
-								    </div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="content-box-large">
+		  				<div class="panel-heading">
+								<div class="panel-title">Sección de Trivias</div>
+						  </div>
+		  				<div class="panel-body">
+		  					<div id="rootwizard">
+									<div class="navbar">
+								  	<div class="navbar-inner">
+								    	<div class="container">
+												<ul class="nav nav-pills">
+								  				<li class="active"><a href="#tab1" data-toggle="tab">Datos Generales</a></li>
+													<li><a href="#tab2" data-toggle="tab">Preguntas</a></li>
+												</ul>
+								 			</div>
+								  	</div>
 									</div>
-									<div class="form-group">
-								    <label for="trivVig" class="col-sm-2 control-label">Vigencia:</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="trivVig" placeholder="Vigencia">
-								    </div>
-									</div>	
-									<div class="form-group">
-								    <label for="trivPremio" class="col-sm-2 control-label">Premio:</label>
-								    <div class="col-sm-10">
-								      <input type="number" class="form-control" min="1" name="trivPremio" placeholder="$">
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Logo Blanco:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="trivLogoB">
-												<p class="help-block">
-												Ingresa una imagen con formato .png
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Logo Negro:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="trivLogoN">
-												<p class="help-block">
-												Ingresa una imagen con formato .png
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen Principal:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="trivImgP">
-												<p class="help-block">
-												Ingresa una imagen con formato .png
-												</p>
-											</div>
-									</div>			
-								  <div class="form-group">
-								    <div class="col-sm-offset-2 col-sm-10">
+									<div class="tab-content">
+								    <div class="tab-pane active" id="tab1">
+											<form id="new-triv" class="form-horizontal" role="form">
+								  			<div class="form-group">
+								    			<label for="restName" class="col-sm-2 control-label">Nombre:</label>
+								    			<div class="col-sm-10">
+								      			<input type="text" class="form-control" name="trivName" placeholder="Nombre">
+								    			</div>
+								  			</div>
+												<div class="form-group">
+								    			<label for="trivFecha" class="col-sm-2 control-label">Fecha:</label>
+								    			<div class="col-sm-10">
+								      			<input type="text" class="form-control" name="trivFecha" placeholder="Fecha">
+								    			</div>
+												</div>									
+								  			<div class="form-group">
+								    			<label class="col-sm-2 control-label">Incluye:</label>
+								    			<div class="col-sm-10">
+								      			<textarea name="trivInclu" class="form-control" placeholder="Incluye" rows="3"></textarea>
+								    			</div>
+												</div>
+												<div class="form-group">
+								    			<label for="trivVig" class="col-sm-2 control-label">Vigencia:</label>
+								    			<div class="col-sm-10">
+								      			<input type="text" class="form-control" name="trivVig" placeholder="Vigencia">
+								    			</div>
+												</div>	
+												<div class="form-group">
+								    			<label for="trivPremio" class="col-sm-2 control-label">Premio:</label>
+								    			<div class="col-sm-10">
+								      			<input type="number" class="form-control" min="1" name="trivPremio" placeholder="$">
+								    			</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Logo Blanco:</label>
+													<div class="col-md-10">
+														<input type="file" class="btn btn-default" name="trivLogoB">
+														<p class="help-block">
+															Ingresa una imagen con formato .png
+														</p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Logo Negro:</label>
+													<div class="col-md-10">
+														<input type="file" class="btn btn-default" name="trivLogoN">
+														<p class="help-block">
+															Ingresa una imagen con formato .png
+														</p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Imagen Principal:</label>
+													<div class="col-md-10">
+														<input type="file" class="btn btn-default" name="trivImgP">
+														<p class="help-block">
+															Ingresa una imagen con formato .png
+														</p>
+													</div>
+												</div>			
+											</form>
+										</div>
+										<div class="tab-pane" id="tab2">
+											<form class="form-horizontal" role="form">
+											<div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 1:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 2:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 3:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 4:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 5:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 6:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 7:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 8:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 9:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div><div class="qSection">
+								  				<div class="form-group">
+								    				<label class="col-sm-2 control-label">Pregunta 10:</label>
+								    				<div class="col-sm-10">
+								      					<input type="text" class="form-control question" placeholder="Pregunta">
+								    				</div>
+								  				</div>
+												<div class="form-group">
+								    				<label class="col-sm-2 control-label">Respuestas:</label>
+								    				<div class="col-sm-3">
+								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
+													</div>
+													<div class="col-sm-3">
+								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
+								    				</div>
+												</div>
+											</div>											
+											</form>
+										</div>
+								<div class="form-group">
+								  <div class="col-sm-offset-2 col-sm-10">
 										<button id="btn-submit" class="btn btn-primary" type="button">
-													Guardar
+													Guardar Trivia
 										</button>
-								    </div>
 								  </div>
-								</form>
-			  				</div>
-		  	</div>
-		  </div>
+								</div>
+							</div>
+		  			</div>
+		  		</div>
+				</div>
+			</div>
 		</div>
-    </div>
+	</div>
+	</div>
+  </div>
 
     <footer>
          <div class="container">
@@ -187,14 +403,18 @@
     <script src="../../js/forms.js"></script>
 		<script>
 		jQuery("#btn-submit").click(function(e){
-			var formElement = document.getElementById("new-trivia");
+			var trivia= new Array();
+			$(".qSection").each(function(){
+			var pregunta = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val()};				
+			trivia.push(pregunta);	
+			});			
+			var formElement = document.getElementById("new-triv");
 			var form_data = new FormData(formElement); 
-			form_data.append("restDays", $("#restDays").val());
-			form_data.append("restHours", $("#restHours").val());
+			form_data.append("trivCont",JSON.stringify(trivia));
 			
-    	var url = "../../model/restaurantes/Create.php"; // the script where you handle the form input.
+    	var url = "../../model/trivias/Create.php"; // the script where you handle the form input.
     	jQuery.ajax({
-					 dataType: 'text',  // what to expect back from the PHP script, if anything
+		   dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,
            contentType: false,
            processData: false,
@@ -204,7 +424,7 @@
            success: function(data)
            {
                alert(data); // show response from the php script.
-					     window.location.href = '../';
+					     //window.location.href = '../';
 					 }
          });
     		e.preventDefault(); // avoid to execute the actual submit of the form.

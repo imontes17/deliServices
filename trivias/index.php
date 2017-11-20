@@ -1,6 +1,6 @@
 <?php
-/*require_once "../model/trivias/Read.php";
-$trivias=getTrivias();*/
+require_once "../model/trivias/Read.php";
+$trivias=getTrivias();
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -87,7 +87,7 @@ $trivias=getTrivias();*/
 											<tr>
 												<td><?php echo $trivia["id"];?></td>
 												<td><?php echo $trivia["name"];?></td>
-												<td><?php echo $trivia["label"];?></td>
+												<td><?php echo $trivia["fecha"];?></td>
 												<td>$ <?php echo $trivia["premio"];?></td>
 												<td><?php echo $trivia["vigencia"];?></td>
 												<td><?php echo $trivia["status"];?></td>												
@@ -114,29 +114,5 @@ $trivias=getTrivias();*/
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/custom.js"></script>
-		<script>
-			function deleteRest(id){
-				var formData = new FormData();
-				formData.append("restId",id);
-				if (confirm("¿Desea Eliminar el Restaurante?") == true) {
-				var url = "../../model/restaurantes/Delete.php"; // the script where you handle the form input.
-    		jQuery.ajax({
-					 dataType: 'text',  // what to expect back from the PHP script, if anything
-           cache: false,
-           contentType: false,
-           processData: false,
-           type: "POST",
-           url: url,
-           data: formData, // serializes the form's elements.
-           success: function(data)
-           {
-               alert(data); // show response from the php script.
-					     location.reload();
-					 }
-         });
-    			e.preventDefault(); // avoid to execute the actual submit of the form.
-				}
-			}
-		</script>
   </body>
 </html>
