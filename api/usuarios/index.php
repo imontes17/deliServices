@@ -20,5 +20,13 @@ $app->post('/nuevo', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->get('/login', function (Request $request, Response $response) {
+    
+    $email=$request->getParam("email");
+    $pass=$request->getParam("password");
+    $json  = loginUser($email,$pass);
+    $response->getBody()->write("$json");
 
+    return $response;
+});
 $app->run();
