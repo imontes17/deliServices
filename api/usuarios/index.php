@@ -20,11 +20,20 @@ $app->post('/nuevo', function (Request $request, Response $response) {
 
     return $response;
 });
-$app->get('/login', function (Request $request, Response $response) {
+$app->post('/login', function (Request $request, Response $response) {
     
     $email=$request->getParam("email");
     $pass=$request->getParam("password");
     $json  = loginUser($email,$pass);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
+$app->post('/tipo_comida', function (Request $request, Response $response) {
+    
+    $tipo  = $request->getParam("tipo_comida");
+    $token = $request->getParam("token");
+    $json  = setTipoComida($tipo,$token);
     $response->getBody()->write("$json");
 
     return $response;

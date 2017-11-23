@@ -52,5 +52,22 @@ function loginUser($email,$password){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
+function setTipoComida($tipo,$token){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("UPDATE deli_user SET tipo_comida=:tcomida WHERE token=:token LIMIT 1");
+        $stm->execute(array(":tcomida" =>$tipo,':token' => $token));
+        $queryCount = $stm->rowCount();
 
+        if($queryCount == 1) {
+            $response["msg"]="Tipo de comida guardado satisfactoriamente";
+        } else {
+            $response["error"]="No se ha guardado el tipo de comida, asegurese que el token sea el correcto";
+        }
+        return json_encode($response,JSON_UNESCAPED_UNICODE);              
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
 ?>
