@@ -88,7 +88,7 @@ $usuarios=getUsuarios();
 												<td><?php echo $user["username"];?></td>
 												<td><?php echo $user["email"];?></td>												
 												<td><?php echo $user["token"];?></td>
-												<td>************</td>
+												<td><?php echo $user["tipo_comida"];?></td>
 												<td><a href="" onclick="deleteUser(<?php echo $user["id"]?>)">Eliminar</a></td>												
 											</tr>
 										<?php endforeach;?>
