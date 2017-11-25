@@ -38,4 +38,12 @@ $app->post('/tipo_comida', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->post('/password/recuperar', function (Request $request, Response $response) {
+    
+    $email = $request->getParam("email");
+    $json  = recoverPassword($email);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->run();
