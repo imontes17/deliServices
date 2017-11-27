@@ -115,4 +115,31 @@ function recoverPassword($email){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
+function updatePassword($token,$newPass,$oldPass){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT * FROM deli_user WHERE token='$token' LIMIT 1");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $user=$stm->fetch();
+        
+        if(is_array($user) && password_verify($oldPass, $user["password"])){
+            $stm = $database->prepare("UPDATE deli_user SET password=:newPass WHERE token=:token LIMIT 1");
+            $stm->execute(array(":newPass" =>password_hash($newPass, PASSWORD_DEFAULT),':token' => $token));
+            $queryCount = $stm->rowCount();
+            if($queryCount == 1) {
+                $response["msg"]="Actializacion exitosa";
+            }else {
+                $response["error"]="No se actualizo de manera correcta";
+            }           
+        }
+        else{
+            $response["error"]="No se actualizo de manera correcta";
+        }
+        return json_encode($response,JSON_UNESCAPED_UNICODE);              
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
 ?>

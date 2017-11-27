@@ -46,4 +46,15 @@ $app->post('/password/recuperar', function (Request $request, Response $response
 
     return $response;
 });
+$app->post('/password/actualizar', function (Request $request, Response $response) {
+    
+    $token = $request->getParam("token");
+    $oldPass = $request->getParam("old_password");
+    $newPass = $request->getParam("new_password");
+    
+    $json  = updatePassword($token,$newPass,$oldPass);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->run();
