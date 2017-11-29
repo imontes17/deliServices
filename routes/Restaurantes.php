@@ -90,7 +90,7 @@ function getRestaurantsByProximity($rango,$latitud,$longitud){
     try{
         $nearRest=[];
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,latitud,longitud FROM deli_restaurant");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,latitud,longitud FROM deli_restaurant WHERE latitud IS NOT NULL AND longitud IS NOT NULL");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $restaurantes=$stm->fetchAll();
