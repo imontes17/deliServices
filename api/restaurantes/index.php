@@ -31,4 +31,13 @@ $app->get('/{id}/schedule/{dayWeek}', function (Request $request, Response $resp
 
     return $response;
 });
+$app->post('/cercanos', function (Request $request, Response $response) {
+    $rango=$request->getParam("rango");
+    $latitud=$request->getParam("latitud");
+    $longitud=$request->getParam("longitud");
+    $json  = getRestaurantsByProximity($rango,$latitud,$longitud);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->run();

@@ -33,6 +33,8 @@ $restEdit  = $_POST["restEdit"]? $_POST["restEdit"] : null;
 $restLogoEdit = $_FILES["restLogoEdit"]? $_FILES["restLogoEdit"]['name'] : null;
 $restSug   = $_POST["restSug"]? $_POST["restSug"] : null;
 $restCoord = $_POST["restCoord"]? $_POST["restCoord"] : null;
+$restLat = $_POST["restLat"]? $_POST["restLat"] : null;
+$restLong = $_POST["restLong"]? $_POST["restLong"] : null;
 $restOrdDeli = $_POST["restOrdDeli"]? $_POST["restOrdDeli"] : null;
 $restOrdAdi = $_POST["restOrdAdi"] ? $_POST["restOrdAdi"] : null ;
 $restDays  = $_POST["restDays"];
@@ -45,10 +47,10 @@ try{
    $db = $database->openConnection();
    $stm = $db->prepare("
         INSERT INTO deli_restaurant 
-        (id_restaurant,name_restaurant,category,zona,direccion,tipo_comida,precio,img_price,incluye,introduccion,p1,p2,p3,logo,imagen_principal,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,sugeridos,cordenadas,no_ordenes_deli,no_ordenes_adicionales,deli_categories_id_category,days,hours) 
+        (id_restaurant,name_restaurant,category,zona,direccion,tipo_comida,precio,img_price,incluye,introduccion,p1,p2,p3,logo,imagen_principal,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,sugeridos,google_maps,latitud,longitud,no_ordenes_deli,no_ordenes_adicionales,deli_categories_id_category,days,hours) 
         VALUES 
-        (:id,:name,:cat,:zone,:addr,:tcom,:precio,:imgPrice,:inclu,:intro,:p1,:p2,:p3,:logo,:imgP,:video,:img2,:img3,:frase,:edit,:ledit,:sug,:coord,:ordD,:ordA,:catId,:days,:hours)");
-    $stm->execute(array(":id" =>null,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,':imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0],':days'=>$restDays,':hours'=>$restHours)); 
+        (:id,:name,:cat,:zone,:addr,:tcom,:precio,:imgPrice,:inclu,:intro,:p1,:p2,:p3,:logo,:imgP,:video,:img2,:img3,:frase,:edit,:ledit,:sug,:coord,:lat,:long,:ordD,:ordA,:catId,:days,:hours)");
+    $stm->execute(array(":id" =>null,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,':imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':lat'=>$restLat,':long'=>$restLong,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0],':days'=>$restDays,':hours'=>$restHours)); 
     
     $lastRegister=$db->lastInsertId();
     $directory=$pathRest.$lastRegister;

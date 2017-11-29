@@ -230,9 +230,21 @@
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas:</label>
+								    <label for="restCoord" class="col-sm-2 control-label">URL Google Maps:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas">
+								      <input type="text" class="form-control" name="restCoord" placeholder="url">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restCoord" class="col-sm-2 control-label">Latitud:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restLat" placeholder="Latitud">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restCoord" class="col-sm-2 control-label">Longitud:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restLong" placeholder="Longitud">
 								    </div>
 									</div>
 									<div class="form-group">

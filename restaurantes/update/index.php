@@ -265,9 +265,21 @@ $imagesPath=getImagesPath($restaurante);
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label for="restCoord" class="col-sm-2 control-label">Coordenadas:</label>
+								    <label for="restCoord" class="col-sm-2 control-label">URL Google Maps:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="restCoord" placeholder="Coordenadas" value="<?php echo $restaurante['cordenadas']?>">
+								      <input type="text" class="form-control" name="restCoord" placeholder="url" value="<?php echo $restaurante['google_maps']?>">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restCoord" class="col-sm-2 control-label">Latitud:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restLat" placeholder="Latitud" value="<?php echo $restaurante['latitud']?>">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label for="restCoord" class="col-sm-2 control-label">Longitud:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restLong" placeholder="Longitud" value="<?php echo $restaurante['longitud']?>">
 								    </div>
 									</div>
 									<div class="form-group">

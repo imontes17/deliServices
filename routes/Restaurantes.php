@@ -85,4 +85,69 @@ function scheduleValidation($restId,$dayWeek){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
+
+function getRestaurantsByProximity($rango,$latitud,$longitud){
+    try{
+        $nearRest=[];
+        $database=initConnection();
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,latitud,longitud FROM deli_restaurant");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $restaurantes=$stm->fetchAll();
+        foreach($restaurantes as $rest){
+            if(isNearOf($rest,$latitud,$longitud)<=$rango){
+                //$diff=isNearOf($rest,$latitud,$longitud);
+                //$rest["diff"]=$diff;
+                array_push($nearRest,$rest);
+            }
+        }
+        if(!empty($nearRest)){
+            return json_encode($nearRest,JSON_UNESCAPED_UNICODE);                          
+        }else{
+            $response["msg"]="No hay restaurantes cerca de ti";
+            return json_encode($response,JSON_UNESCAPED_UNICODE);    
+        }
+
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
+
+function isNearOf($rest,$latitud,$longitud){
+    /*$degtorad = 0.01745329; 
+    $radtodeg = 57.29577951; 
+    
+    $dlong = ($longitud - $rest["longitud"]); 
+    $dvalue = (sin($latitud * $degtorad) * sin($rest["latitud"] * $degtorad)) 
+    + (cos($latitud * $degtorad) * cos($rest["latitud"] * $degtorad) 
+    * cos($dlong * $degtorad)); 
+    
+    $dd = acos($dvalue) * $radtodeg; 
+    
+   // $miles = ($dd * 69.16); 
+    $km = ($dd * 111.302); 
+    
+    return $km;*/ 
+    $lat0 = $latitud;
+    $lng0 = $longitud;
+    $lat1 = (float)$rest["latitud"];
+    $lng1 = (float)$rest["longitud"];
+
+    $rlat0 = deg2rad($lat0);
+    $rlng0 = deg2rad($lng0);
+    $rlat1 = deg2rad($lat1);
+    $rlng1 = deg2rad($lng1);
+
+    $latDelta = $rlat1 - $rlat0;
+    $lonDelta = $rlng1 - $rlng0;
+
+    $distance = (6371 *
+    acos(
+        cos($rlat0) * cos($rlat1) * cos($lonDelta) +
+        sin($rlat0) * sin($rlat1)
+    )
+);
+return $distance;
+}
 ?>
