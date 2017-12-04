@@ -1,6 +1,6 @@
 <?php
-require_once "../model/usuarios/Read.php";
-$usuarios=getUsuarios();
+require_once "../model/noticias/Read.php";
+$noticias=getNotices();
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -61,36 +61,38 @@ $usuarios=getUsuarios();
                 <ul class="nav">
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-										<li><a href="../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
-                    <li class="current"><a href="usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>										
+                    <li><a href="../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
+                    <li><a href="../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
 										<li><a href="../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
-										<li><a href="../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 												
+                    <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>									
 									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
+					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Noticia</button></a>	
 					<div class="panel-body">
 						<table class="table table-hover">
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Nombre de Usuario</th>
-											<th>Email</th>											
-											<th>Token App</th>
-											<th>Comida Favorita</th>
+											<th>Nombre</th>
+											<th>Categoria</th>
+											<th>Autor</th>
 											<th>------</th>
+											<th>------</th>											
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($usuarios as $user):?>
+										<?php foreach($noticias as $noti):?>
 											<tr>
-												<td><?php echo $user["id"];?></td>
-												<td><?php echo $user["username"];?></td>
-												<td><?php echo $user["email"];?></td>												
-												<td><?php echo $user["token"];?></td>
-												<td><?php echo $user["tipo_comida"];?></td>
-												<td><a href="" onclick="deleteUser(<?php echo $user["id"]?>)">Eliminar</a></td>												
+												<td><?php echo $noti["id"];?></td>
+												<td><?php echo $noti["name"];?></td>
+												<td><?php echo $noti["categoria"];?></td>
+												<td><?php echo $noti["autor"];?></td>
+												<td>------</td>												
+												<!--<td><a href="update?id=<?php echo $noti["id"]?>">Editar</a></td>-->
+												<td><a href="" onclick="deleteNoti(<?php echo $noti["id"]?>)">Eliminar</a></td>												
 											</tr>
 										<?php endforeach;?>
 									</tbody>
@@ -115,11 +117,11 @@ $usuarios=getUsuarios();
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/custom.js"></script>
 		<script>
-			function deleteUser(id){
+			function deleteNoti(id){
 				var formData = new FormData();
-				formData.append("userId",id);
-				if (confirm("¿Desea Eliminar al Usuario?") == true) {
-				var url = "../../model/usuarios/Delete.php"; // the script where you handle the form input.
+				formData.append("notiId",id);
+				if (confirm("¿Desea Eliminar la noticia?") == true) {
+				var url = "../../model/noticias/Delete.php"; // the script where you handle the form input.
     		jQuery.ajax({
 					 dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,
