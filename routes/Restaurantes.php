@@ -25,6 +25,29 @@ function getAllRestaurants(){
         return $e->getMessage();
     }
 }
+function getRestaurantById($id){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial FROM deli_restaurant WHERE id_restaurant=$id LIMIT 1");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $restaurante=$stm->fetch();
+        
+        if(is_array($restaurante)){
+            $arrayOk = setImagesToRestaurant($restaurante);
+            $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
+            return $result;
+        }
+        else{
+            $response["error"]="No existe restaurante con id: $id";
+            return json_encode($response,JSON_UNESCAPED_UNICODE);           
+        }
+        
+    }catch(PDOException $e){
+        $response["error"]="No existe restaurante con id: $id";
+        return json_encode($response,JSON_UNESCAPED_UNICODE);                   
+    }
+}
 
 function getRestaurantsByCategory($catId){
     try{
@@ -51,6 +74,18 @@ $pathRest='/media/restaurantes/';
        $array[$key]["imagen_3"]         = $pathRest.$id."/img3/".$array[$key]["imagen_3"];
        $array[$key]["logo_editorial"]   = $pathRest.$id."/logoE/".$array[$key]["logo_editorial"]; 
     }  
+    return $array; 
+}
+function setImagesToRestaurant($array){
+    $pathRest='/media/restaurantes/';
+       $id = $array["id_restaurant"];
+       $array["img_price"]        = $pathRest.$id."/imgPrecio/".$array["img_price"];       
+       $array["imagen_principal"] = $pathRest.$id."/imgP/".$array["imagen_principal"];
+       $array["logo"]             = $pathRest.$id."/logo/".$array["logo"];
+       $array["imagen_2"]         = $pathRest.$id."/img2/".$array["imagen_2"];
+       $array["imagen_3"]         = $pathRest.$id."/img3/".$array["imagen_3"];
+       $array["logo_editorial"]   = $pathRest.$id."/logoE/".$array["logo_editorial"]; 
+    
     return $array; 
 }
 function scheduleValidation($restId,$dayWeek){

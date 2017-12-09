@@ -16,6 +16,12 @@ $app->get('/', function (Request $request, Response $response) {
     return $response;
 });
 
+$app->get('/{id}', function (Request $request, Response $response) {
+    $id = $request->getAttribute('id');        
+    $json  = getRestaurantById($id);
+    $response->getBody()->write("$json");
+    return $response;
+});
 $app->get('/categoria/{id}', function (Request $request, Response $response) {
     $catId = $request->getAttribute('id');
     $json  = getRestaurantsByCategory($catId);
