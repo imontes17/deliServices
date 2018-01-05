@@ -28,7 +28,7 @@ function getAllRestaurants(){
 function getRestaurantById($id){
     try{
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname FROM deli_restaurant WHERE id_restaurant=$id LIMIT 1");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,thumbnail,tolerancia,tag,nickname FROM deli_restaurant WHERE id_restaurant=$id LIMIT 1");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $restaurante=$stm->fetch();
