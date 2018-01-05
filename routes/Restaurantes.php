@@ -128,7 +128,7 @@ function getRestaurantsByProximity($rango,$latitud,$longitud){
     try{
         $nearRest=[];
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,latitud,longitud FROM deli_restaurant WHERE latitud IS NOT NULL AND longitud IS NOT NULL");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,latitud,longitud,nickname,tag,tolerancia,thumbnail,nickname FROM deli_restaurant WHERE latitud IS NOT NULL AND longitud IS NOT NULL");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $restaurantes=$stm->fetchAll();
@@ -140,6 +140,7 @@ function getRestaurantsByProximity($rango,$latitud,$longitud){
             }
         }
         if(!empty($nearRest)){
+            $nearRest=setImagesRoute($nearRest);
             return json_encode($nearRest,JSON_UNESCAPED_UNICODE);                          
         }else{
             $response["msg"]="No hay restaurantes cerca de ti";
