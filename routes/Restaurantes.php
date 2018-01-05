@@ -28,7 +28,7 @@ function getAllRestaurants(){
 function getRestaurantById($id){
     try{
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial FROM deli_restaurant WHERE id_restaurant=$id LIMIT 1");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname FROM deli_restaurant WHERE id_restaurant=$id LIMIT 1");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $restaurante=$stm->fetch();
@@ -52,7 +52,7 @@ function getRestaurantById($id){
 function getRestaurantsByCategory($catId){
     try{
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial FROM deli_restaurant WHERE deli_categories_id_category=$catId");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname FROM deli_restaurant WHERE deli_categories_id_category=$catId");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $arrayOk = setImagesRoute($stm->fetchAll());
@@ -73,6 +73,8 @@ $pathRest='/media/restaurantes/';
        $array[$key]["imagen_2"]         = $pathRest.$id."/img2/".$array[$key]["imagen_2"];
        $array[$key]["imagen_3"]         = $pathRest.$id."/img3/".$array[$key]["imagen_3"];
        $array[$key]["logo_editorial"]   = $pathRest.$id."/logoE/".$array[$key]["logo_editorial"]; 
+       $array[$key]["thumbnail"]   = $pathRest.$id."/thumbnail/".$array[$key]["thumbnail"]; 
+       
     }  
     return $array; 
 }
@@ -85,7 +87,8 @@ function setImagesToRestaurant($array){
        $array["imagen_2"]         = $pathRest.$id."/img2/".$array["imagen_2"];
        $array["imagen_3"]         = $pathRest.$id."/img3/".$array["imagen_3"];
        $array["logo_editorial"]   = $pathRest.$id."/logoE/".$array["logo_editorial"]; 
-    
+       $array["thumbnail"]        = $pathRest.$id."/thumbnail/".$array["thumbnail"]; 
+       
     return $array; 
 }
 function scheduleValidation($restId,$dayWeek){

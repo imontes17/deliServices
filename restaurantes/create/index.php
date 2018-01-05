@@ -309,6 +309,33 @@
 			  						</p>
 								    </div>
 									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Thumbnail</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default" name="restThumb">
+												<p class="help-block">
+												Ingresa una imagen con formato .png o jpg
+												</p>
+											</div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Tag:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restTag" placeholder="Tag">
+								    </div>
+								  </div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Tolerancia:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restTol" placeholder="Tolerancia">
+								    </div>
+								  </div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Nickname:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restNick" placeholder="Nickname">
+								    </div>
+								  </div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
 										<button id="btn-submit" class="btn btn-primary" type="button">

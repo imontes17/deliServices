@@ -39,6 +39,12 @@ $restOrdDeli = $_POST["restOrdDeli"]? $_POST["restOrdDeli"] : null;
 $restOrdAdi = $_POST["restOrdAdi"] ? $_POST["restOrdAdi"] : null ;
 $restDays  = $_POST["restDays"];
 $restHours  = $_POST["restHours"];
+$restThumb = $_FILES["restThumb"]? $_FILES["restThumb"]['name'] : null;
+$restTag = $_POST["restTag"]? $_POST["restTag"] : null;
+$restTol = $_POST["restTol"]? $_POST["restTol"] : null;
+$restNick = $_POST["restNick"]? $_POST["restNick"] : null;
+
+
 
 //copy($_FILES['restLogoEdit']['tmp_name'],$pathRest. $_FILES["restLogoEdit"]['name']);
 
@@ -47,10 +53,10 @@ try{
    $db = $database->openConnection();
    $stm = $db->prepare("
         INSERT INTO deli_restaurant 
-        (id_restaurant,name_restaurant,category,zona,direccion,tipo_comida,precio,img_price,incluye,introduccion,p1,p2,p3,logo,imagen_principal,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,sugeridos,google_maps,latitud,longitud,no_ordenes_deli,no_ordenes_adicionales,deli_categories_id_category,days,hours) 
+        (id_restaurant,name_restaurant,category,zona,direccion,tipo_comida,precio,img_price,incluye,introduccion,p1,p2,p3,logo,imagen_principal,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,sugeridos,google_maps,latitud,longitud,no_ordenes_deli,no_ordenes_adicionales,deli_categories_id_category,days,hours,thumbnail,tag,tolerancia,nickname) 
         VALUES 
-        (:id,:name,:cat,:zone,:addr,:tcom,:precio,:imgPrice,:inclu,:intro,:p1,:p2,:p3,:logo,:imgP,:video,:img2,:img3,:frase,:edit,:ledit,:sug,:coord,:lat,:long,:ordD,:ordA,:catId,:days,:hours)");
-    $stm->execute(array(":id" =>null,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,':imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':lat'=>$restLat,':long'=>$restLong,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0],':days'=>$restDays,':hours'=>$restHours)); 
+        (:id,:name,:cat,:zone,:addr,:tcom,:precio,:imgPrice,:inclu,:intro,:p1,:p2,:p3,:logo,:imgP,:video,:img2,:img3,:frase,:edit,:ledit,:sug,:coord,:lat,:long,:ordD,:ordA,:catId,:days,:hours,:thumb,:tag,:tol,:nick)");
+    $stm->execute(array(":id" =>null,':name' => $restName , ':cat' =>$restCat[1]  , ':zone' =>$restZone,':addr'=> $restAddr,':tcom'=> $restTcom,':precio'=> $restPrice,':imgPrice'=>$restImgPrice,':inclu'=>$restInclu,':intro'=>$restIntro,':p1'=>$restP1,':p2'=>$restP2,':p3'=>$restP3,':logo'=>$restLogo,':imgP'=>$restImgp,':video'=>$restVideo,':img2'=>$restImg2,':img3'=>$restImg3,':frase'=>$restFrase,':edit'=>$restEdit,':ledit'=>$restLogoEdit,':sug'=>$restSug,':coord'=>$restCoord,':lat'=>$restLat,':long'=>$restLong,':ordD'=>$restOrdDeli,':ordA'=>$restOrdAdi,':catId'=>$restCat[0],':days'=>$restDays,':hours'=>$restHours,':thumb'=>$restThumb,':tag'=>$restTag,':tol'=>$restTol,':nick'=>$restNick)); 
     
     $lastRegister=$db->lastInsertId();
     $directory=$pathRest.$lastRegister;
@@ -62,7 +68,8 @@ try{
         mkdir($directory."/img2", 0777, true);
         mkdir($directory."/img3", 0777, true);
         mkdir($directory."/logoE", 0777, true);
-        mkdir($directory."/imgPrecio", 0777, true);        
+        mkdir($directory."/imgPrecio", 0777, true);  
+        mkdir($directory."/thumbnail", 0777, true);                
     //}
 
     if($restLogo != null){
@@ -82,6 +89,9 @@ try{
     }
     if($restLogoEdit != null){
         copy($_FILES['restLogoEdit']['tmp_name'],$directory."/logoE/". $_FILES["restLogoEdit"]['name']);        
+    }
+    if($restLogo != null){
+        copy($_FILES['restThumb']['tmp_name'],$directory."/thumbnail/". $_FILES["restThumb"]['name']);        
     }
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
     //Permisos

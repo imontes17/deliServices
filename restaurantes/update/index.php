@@ -344,6 +344,36 @@ $imagesPath=getImagesPath($restaurante);
 			  						</p>
 								    </div>
 									</div>
+									<div class="form-group">
+											<label class="col-md-2 control-label">Thumbnail</label>
+											<div class="col-md-10">
+												<input type="file" class="btn btn-default file" id="restThumb" name="restThumb">
+												<?php if(isset($imagesPath[restThumb])):?>
+												<p id="restLogoEdit-img" class="help-block">
+												<img  src="<?php echo $imagesPath[restThumb]?>"  height="100" width="100"/>
+													Imagen Previa.
+												</p>
+											<?php endif;?>
+											</div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Tag:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restTag" placeholder="Tag" value="<?php echo $restaurante['tag']?>">
+								    </div>
+								  </div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Tolerancia:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restTol" placeholder="Tolerancia" value="<?php echo $restaurante['tolerancia']?>">
+								    </div>
+								  </div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Nickname:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="restNick" placeholder="Nickname" value="<?php echo $restaurante['nickname']?>">
+								    </div>
+								  </div>
 								  <div class="form-group">
 								    <div class="col-sm-offset-2 col-sm-10">
 										<button id="btn-submit" class="btn btn-primary" type="button">

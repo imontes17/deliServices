@@ -54,6 +54,9 @@
         if($restaurantEntity["logo_editorial"]!=null){
             $paths["restLogoEdit"]=$pathRest.$id."/logoE/".$restaurantEntity["logo_editorial"];              
         }
+        if($restaurantEntity["thumbnail"]!=null){
+            $paths["restThumb"]=$pathRest.$id."/thumbnail/".$restaurantEntity["thumbnail"];              
+        }
         return $paths;     
        
     }
