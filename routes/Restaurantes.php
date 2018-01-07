@@ -91,6 +91,14 @@ function setImagesToRestaurant($array){
        
     return $array; 
 }
+function setThumbnailRoute($array){
+    $pathRest='/media/restaurantes/';
+        foreach($array as $key => $element){
+           $id = $array[$key]["id_restaurant"];
+           $array[$key]["thumbnail"]   = $pathRest.$id."/thumbnail/".$array[$key]["thumbnail"]; 
+        }  
+        return $array; 
+    }
 function scheduleValidation($restId,$dayWeek){
     try{
         $database=initConnection();
@@ -140,7 +148,7 @@ function getRestaurantsByProximity($rango,$latitud,$longitud){
             }
         }
         if(!empty($nearRest)){
-            $nearRest=setImagesRoute($nearRest);
+            $nearRest=setThumbnailRoute($nearRest);
             return json_encode($nearRest,JSON_UNESCAPED_UNICODE);                          
         }else{
             $response["msg"]="No hay restaurantes cerca de ti";
