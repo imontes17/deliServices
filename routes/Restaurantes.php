@@ -52,7 +52,7 @@ function getRestaurantById($id){
 function getRestaurantsByCategory($catId){
     try{
         $database=initConnection();
-        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname FROM deli_restaurant WHERE deli_categories_id_category=$catId");
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname,thumbnail FROM deli_restaurant WHERE deli_categories_id_category=$catId");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $arrayOk = setImagesRoute($stm->fetchAll());
