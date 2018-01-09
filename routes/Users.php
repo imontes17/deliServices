@@ -204,8 +204,11 @@ function getProfileInfo($token){
     
         if(is_array($user)){
             $user["image"]=$pathUser.$user["id"]."/perfil/".$user["image"];
+            $response=$user;
+        }else{
+            $response["error"]="Asegurese que el token sea el correcto";
         }
-        $response=$user;
+        
     }catch(PDOException $e){
         $response["error"]=$e->getMessage();
     }
