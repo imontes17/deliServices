@@ -203,7 +203,7 @@ function getProfileInfo($token){
         $user=$stm->fetch();
     
         if(is_array($user)){
-            $user["image"]=$pathUser.$user["id"]."/profile/".$user["image"];
+            $user["image"]=$pathUser.$user["id"]."/perfil/".$user["image"];
         }
         $response=$user;
     }catch(PDOException $e){
