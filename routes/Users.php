@@ -3,6 +3,7 @@ require '../../model/Connection.php';
 require '../../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Slim\Http\UploadedFile;
 function initConnection(){
     try
     {
@@ -15,12 +16,18 @@ function initConnection(){
 }
 
 function saveNewUser($email,$pass,$username){
+    $pathUser=__DIR__.'/../media/usuarios/';    
     try{
         $db=initConnection();
         $stm = $db->prepare("INSERT INTO 
-        deli_user(id,username,email,password,token) 
-        VALUES (:id,:username,:email,:pass,:tok)");
-        $stm->execute(array(":id" =>null,':username'=>$username,':email'=>$email,':pass'=>password_hash($pass, PASSWORD_DEFAULT),':tok'=>sha1($email)));      
+        deli_user(id,username,email,password,token,image) 
+        VALUES (:id,:username,:email,:pass,:tok,:img)");
+        $stm->execute(array(":id" =>null,':username'=>$username,':email'=>$email,':pass'=>password_hash($pass, PASSWORD_DEFAULT),':tok'=>sha1($email),':img'=>null));      
+        
+        $lastRegister=$db->lastInsertId();
+        $directory=$pathUser.$lastRegister;  
+        mkdir($directory."/perfil", 0777, true);      
+        
         $response["token"]=sha1($email);
         $response["msg"]="Usuario agregado con exito!!!";
         $result = json_encode($response,JSON_UNESCAPED_UNICODE);
@@ -72,6 +79,50 @@ function setTipoComida($tipo,$token){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
+function setProfileImage($img,$token){
+    $pathUser = $_SERVER['DOCUMENT_ROOT'] . "/media/usuarios/";
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT id FROM deli_user WHERE token='$token' LIMIT 1");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $user=$stm->fetch();
+        if(is_array($user)){
+            $directory=$pathUser.$user["id"]."/perfil/";  
+            $filename = $img->getClientFilename();        
+            $stm = $database->prepare("UPDATE deli_user SET image=:imgName WHERE token=:token LIMIT 1");
+            $stm->execute(array(":imgName" =>$filename,':token' => $token));
+            $files=array_diff(scandir($directory), array('..', '.'));
+            //Borrar archivos en el directorio
+            foreach($files as $file) {
+                unlink($directory.$file);
+            }
+            
+            if(moveUploadedFile($directory, $img)) {
+                $response["msg"]="Imagen de perfil guardada satisfactoriamente";
+            } else {
+                $response["error"]="Ha ocurrido un error al guardar la imagen de perfil";
+            }
+        }else {
+            $response["error"]="Ha ocurrido un error al guardar la imagen de perfil";            
+        }        
+        return json_encode($response,JSON_UNESCAPED_UNICODE);         
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
+function moveUploadedFile($directory, UploadedFile $uploadedFile)
+{
+    $uploadedFile->moveTo($directory . DIRECTORY_SEPARATOR . $uploadedFile->getClientFilename());
+    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
+    //Permisos
+    foreach($iterator as $item) {
+        chmod($item, 0777);
+    }
+    return true;
+}
+
 function recoverPassword($email){
     try{
         $database=initConnection();
@@ -128,7 +179,7 @@ function updatePassword($token,$newPass,$oldPass){
             $stm->execute(array(":newPass" =>password_hash($newPass, PASSWORD_DEFAULT),':token' => $token));
             $queryCount = $stm->rowCount();
             if($queryCount == 1) {
-                $response["msg"]="Actializacion exitosa";
+                $response["msg"]="Actualizacion exitosa";
             }else {
                 $response["error"]="No se actualizo de manera correcta";
             }           
@@ -141,5 +192,24 @@ function updatePassword($token,$newPass,$oldPass){
         $response["error"]=$e->getMessage();
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
+}
+function getProfileInfo($token){
+    $pathUser ="/media/usuarios/";
+    try{
+        $database=initConnection();        
+        $stm = $database->prepare("SELECT id,image,username,tipo_comida FROM deli_user WHERE token='$token' LIMIT 1");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $user=$stm->fetch();
+    
+        if(is_array($user)){
+            $user["image"]=$pathUser.$user["id"]."/profile/".$user["image"];
+        }
+        $response=$user;
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+    }
+    return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    
 }
 ?>
