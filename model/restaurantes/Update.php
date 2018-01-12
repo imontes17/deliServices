@@ -75,6 +75,9 @@ try{
         copy($_FILES['restLogoEdit']['tmp_name'],$directory."/logoE/". $_FILES["restLogoEdit"]['name']);        
     }
     if($_FILES["restThumb"]['size'] > 0){
+        if(!is_dir($directory."/thumbnail/")){
+            mkdir($directory."/thumbnail", 0777, true);                            
+        }
         copy($_FILES['restThumb']['tmp_name'],$directory."/thumbnail/". $_FILES["restThumb"]['name']);        
     }
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
