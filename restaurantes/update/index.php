@@ -76,6 +76,7 @@ $imagesPath=getImagesPath($restaurante);
                     <li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 											
 										<li><a href="../../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 										<li><a href="../../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 												
+										<li><a href="../../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
 									</ul>
              </div>
 		  </div>
@@ -93,6 +94,7 @@ $imagesPath=getImagesPath($restaurante);
 									<input type="hidden" name="img2Old" value="<?php echo $restaurante['imagen_2']?>">									
 									<input type="hidden" name="img3Old" value="<?php echo $restaurante['imagen_3']?>">									
 									<input type="hidden" name="logoEditOld" value="<?php echo $restaurante['logo_editorial']?>">									
+									<input type="hidden" name="thumbnailOld" value="<?php echo $restaurante['thumbnail']?>">									
 								  
 									<div class="form-group">
 								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
@@ -349,7 +351,7 @@ $imagesPath=getImagesPath($restaurante);
 											<div class="col-md-10">
 												<input type="file" class="btn btn-default file" id="restThumb" name="restThumb">
 												<?php if(isset($imagesPath[restThumb])):?>
-												<p id="restLogoEdit-img" class="help-block">
+												<p id="restThumb-img" class="help-block">
 												<img  src="<?php echo $imagesPath[restThumb]?>"  height="100" width="100"/>
 													Imagen Previa.
 												</p>

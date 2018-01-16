@@ -66,28 +66,39 @@
                     <li><a href="../../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
 										<li><a href="../../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
 										<li><a href="../../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>	
-										<li class="current"><a href="../../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 																												 												
-										<li><a href="../../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
+										<li><a href="../../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 																												 												
+										<li class="current"><a href="../../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
 									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
 				<div class="panel-heading">
-					  <div class="panel-title">Información de la Noticia</div>
+					  <div class="panel-title">Información del Beneficio</div>
 				</div>
 			  				<div class="panel-body">
-			  					<form id="new-noti" class="form-horizontal" role="form">
+			  					<form id="new-bene" class="form-horizontal" role="form">
 								  <div class="form-group">
-								    <label for="restName" class="col-sm-2 control-label">Nombre:</label>
+								    <label class="col-sm-2 control-label">Nombre:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiName" placeholder="Nombre">
+								      <input type="text" class="form-control" name="beneName" placeholder="Nombre">
 								    </div>
-								  </div>
+									</div>
 									<div class="form-group">
-								    <label for="notiCat" class="col-sm-2 control-label">Categoria:</label>
+								    <label class="col-sm-2 control-label">Tipo de Beneficio:</label>
 								    <div class="col-sm-10">
-										<select class="form-control" name="notiCat">
+										<select class="form-control" name="beneTipo">
+  										<option value="Recursos Humanos">Recursos Humanos</option>
+  										<option value="Compras">Compras</option>
+  										<option value="Servicios">Servicios</option>
+  										<option value="Networking">Networking</option>
+										</select>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Categoria:</label>
+								    <div class="col-sm-10">
+										<select class="form-control" name="beneCat">
   										<option value="Diamante">Diamante</option>
   										<option value="Mixologia">Mixologia</option>
   										<option value="Platino">Platino</option>
@@ -98,74 +109,65 @@
   										<option value="Verdes">Verdes</option>
 										</select>
 								    </div>
-									</div>
+								  </div>
 									<div class="form-group">
-											<label class="col-md-2 control-label">Imagen Autor:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiImgAutor">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
-									</div>
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Autor:</label>
+								    <label class="col-sm-2 control-label">Zona:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiAutor" placeholder="Autor">
+								      <input type="text" class="form-control" name="beneZona" placeholder="Zona">
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Subtitulo:</label>
+								    <label class="col-sm-2 control-label">Dirección:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiSub" placeholder="Subtitulo">
+								      <input type="text" class="form-control" name="beneDir" placeholder="Dirección">
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Fecha:</label>
+								    <label class="col-sm-2 control-label">Beneficio:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiFecha" placeholder="DD/MM/AAAA">
-								    </div>
-									</div>									
-								  
-									<div class="form-group">
-								    <label class="col-sm-2 control-label">Introducción:</label>
-								    <div class="col-sm-10">
-								      <textarea name="notiIntro" class="form-control" placeholder="Introducción" rows="3"></textarea>
+								      <input type="text" class="form-control" name="beneBen" placeholder="Beneficio">
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Encabezado:</label>
+								    <label class="col-sm-2 control-label">Correo:</label>
 								    <div class="col-sm-10">
-								      <textarea name="notiEnca" class="form-control" placeholder="Encabezado" rows="3"></textarea>
+								      <input type="text" class="form-control" name="beneEmail" placeholder="Correo">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Beneficio 1:</label>
+								    <div class="col-sm-10">
+											<textarea name="beneBene1" class="form-control" placeholder="Beneficio #1" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Beneficio 2:</label>
+								    <div class="col-sm-10">
+											<textarea name="beneBene2" class="form-control" placeholder="Beneficio #2" rows="3"></textarea>
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Nosotros:</label>
+								    <div class="col-sm-10">
+											<textarea name="beneNos" class="form-control" placeholder="Nosotros" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 1:</label>
 								    <div class="col-sm-10">
-								      <textarea name="notiP1" class="form-control" placeholder="Parrafo 1" rows="3"></textarea>
+											<textarea name="beneP1" class="form-control" placeholder="Parrafo #2" rows="3"></textarea>
 								    </div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Parrafo 2:</label>
 								    <div class="col-sm-10">
-								      <textarea name="notiP2" class="form-control" placeholder="Parrafo 2" rows="3"></textarea>
+											<textarea name="beneP2" class="form-control" placeholder="Parrafo #2" rows="3"></textarea>
 								    </div>
-									</div><div class="form-group">
-								    <label class="col-sm-2 control-label">Parrafo 3:</label>
-								    <div class="col-sm-10">
-								      <textarea name="notiP3" class="form-control" placeholder="Parrafo 3" rows="3"></textarea>
-								    </div>
-									</div>
+								  </div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Parrafo 4:</label>
-								    <div class="col-sm-10">
-								      <textarea name="notiP4" class="form-control" placeholder="Parrafo 4" rows="3"></textarea>
-								    </div>
-									</div>
-									<div class="form-group">
-											<label class="col-md-2 control-label">Logo:</label>
+											<label class="col-md-2 control-label">Logo Marca:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiLogo">
+												<input type="file" class="btn btn-default" name="beneLogo">
 												<p class="help-block">
 												Ingresa una imagen con formato .png o jpg
 												</p>
@@ -174,7 +176,7 @@
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Principal:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiImgP">
+												<input type="file" class="btn btn-default" name="beneImgP">
 												<p class="help-block">
 												Ingresa una imagen con formato .png o jpg
 												</p>
@@ -183,63 +185,69 @@
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Link Video:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiVideo" placeholder="Link">
+								      <input type="text" class="form-control" name="beneLink" placeholder="Video">
 								    </div>
 									</div>	
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Secundaria 1:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiImgSec1">
+												<input type="file" class="btn btn-default" name="beneImgSec1">
 												<p class="help-block">
 												Ingresa una imagen con formato .png o jpg
 												</p>
-												<input type="text" class="form-control" name="notiDesc1" placeholder="Descripcion de la imagen">												
+												<input type="text" class="form-control" name="beneDesc1" placeholder="Descripcion de la imagen">												
 											</div>
 									</div>
 									<div class="form-group">
 											<label class="col-md-2 control-label">Imagen Secundaria 2:</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiImgSec2">
+												<input type="file" class="btn btn-default" name="beneImgSec2">
 												<p class="help-block">
 												Ingresa una imagen con formato .png o jpg
 												</p>
-												<input type="text" class="form-control" name="notiDesc2" placeholder="Descripcion de la imagen">												
-											</div>
-									</div><div class="form-group">
-											<label class="col-md-2 control-label">Imagen Secundaria 3:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiImgSec3">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-												<input type="text" class="form-control" name="notiDesc3" placeholder="Descripcion de la imagen">												
+												<input type="text" class="form-control" name="beneDesc2" placeholder="Descripcion de la imagen">												
 											</div>
 									</div>
 									<div class="form-group">
 								    <label class="col-sm-2 control-label">Frase:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiFrase" placeholder="Frase">
+								      <input type="text" class="form-control" name="beneFrase" placeholder="Frase">
 								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Editorial:</label>
+								    <label class="col-sm-2 control-label">Latitud:</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" name="notiEdit" placeholder="Editorial">
+								      <input type="text" class="form-control" name="beneLat" placeholder="Latitud">
 								    </div>
 									</div>
 									<div class="form-group">
-											<label class="col-md-2 control-label">Logo Editorial:</label>
-											<div class="col-md-10">
-												<input type="file" class="btn btn-default" name="notiLogoEdit">
-												<p class="help-block">
-												Ingresa una imagen con formato .png o jpg
-												</p>
-											</div>
+								    <label class="col-sm-2 control-label">Longitud:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="beneLon" placeholder="Longitud">
+								    </div>
 									</div>
 									<div class="form-group">
-								    <label class="col-sm-2 control-label">Sugeridos:</label>
+								    <label class="col-sm-2 control-label">Horario de Atención:</label>
 								    <div class="col-sm-10">
-								      <textarea name="notiSuge" class="form-control" placeholder="Sugeridos" rows="3"></textarea>
+								      <input type="text" class="form-control" name="beneHora" placeholder="Horario">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Telefono de Contacto:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="beneTele" placeholder="##-####-####">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Pagina Web:</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" name="beneSitio" placeholder="www.*******.com">
+								    </div>
+									</div>
+									<div class="form-group">
+								    <label class="col-sm-2 control-label">Redes Sociales:</label>
+								    <div class="col-sm-10">
+								      <textarea name="beneRedes" class="form-control" placeholder="Redes Sociales" rows="3"></textarea>
 								    </div>
 									</div>
 								  <div class="form-group">
@@ -259,7 +267,7 @@
     <footer>
          <div class="container">
             <div class="copy text-center">
-               Copyright 2017 <a href='#'>Deli</a>
+               Copyright 2018 <a href='#'>Deli</a>
             </div>    
          </div>
     </footer>
@@ -296,9 +304,9 @@
     <script src="../../js/forms.js"></script>
 		<script>
 		jQuery("#btn-submit").click(function(e){
-			var formElement = document.getElementById("new-noti");
+			var formElement = document.getElementById("new-bene");
 			var form_data = new FormData(formElement); 			
-    	var url = "../../model/noticias/Create.php"; // the script where you handle the form input.
+    	var url = "../../model/beneficios/Create.php"; // the script where you handle the form input.
     	jQuery.ajax({
 					 dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,

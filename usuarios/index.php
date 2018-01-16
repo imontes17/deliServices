@@ -65,6 +65,7 @@ $usuarios=getUsuarios();
                     <li class="current"><a href="usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>										
 										<li><a href="../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 										<li><a href="../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 												
+										<li><a href="../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
 									</ul>
              </div>
 		  </div>

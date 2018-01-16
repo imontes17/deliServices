@@ -1,6 +1,6 @@
 <?php
-require_once "../model/restaurantes/Read.php";
-$restaurantes=getRestaurants();
+require_once "../model/beneficios/Read.php";
+$beneficios=getBeneficios();
 ?>
 <!DOCTYPE html>
 <html  lang="es">
@@ -61,40 +61,40 @@ $restaurantes=getRestaurants();
                 <ul class="nav">
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                    <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
+                    <li><a href="../restaurantes"><i class="glyphicon glyphicon-pencil"></i> Restaurantes</a></li>
                     <li><a href="../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
 										<li><a href="../trivias"><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 										<li><a href="../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 												
-										<li><a href="../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
+										<li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
 									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 		  	<div class="content-box-large">
-					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Restaurante</button></a>	
+					<a href="create"><button type="button" class="btn btn-lg btn-block btn-primary">Agregar Beneficio</button></a>	
 					<div class="panel-body">
 						<table class="table table-hover">
 									<thead>
 										<tr>
 											<th>#</th>
 											<th>Nombre</th>
-											<th>Categoria</th>
-											<th>Comida</th>
-											<th>Precio</th>		
+											<th>Tipo</th>
+											<th>Pagina Web</th>
+											<th>Correo</th>		
 											<th>------</th>
 											<th>------</th>											
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($restaurantes as $rest):?>
+										<?php foreach($beneficios as $bene):?>
 											<tr>
-												<td><?php echo $rest["id_restaurant"];?></td>
-												<td><?php echo $rest["name_restaurant"];?></td>
-												<td><?php echo $rest["category"];?></td>
-												<td><?php echo $rest["tipo_comida"];?></td>
-												<td>$ <?php echo $rest["precio"];?></td>
-												<td><a href="update?id=<?php echo $rest["id_restaurant"]?>">Editar</a></td>
-												<td><a href="" onclick="deleteRest(<?php echo $rest["id_restaurant"]?>)">Eliminar</a></td>												
+												<td><?php echo $bene["id"];?></td>
+												<td><?php echo $bene["nombre"];?></td>
+												<td><?php echo $bene["tipo"];?></td>
+												<td><?php echo $bene["website"];?></td>
+												<td><?php echo $bene["correo"];?></td>
+												<td><a href="update?id=<?php echo $bene["id"]?>">Editar</a></td>
+												<td><a href="" onclick="deleteBene(<?php echo $bene["id"]?>)">Eliminar</a></td>												
 											</tr>
 										<?php endforeach;?>
 									</tbody>
@@ -108,7 +108,7 @@ $restaurantes=getRestaurants();
     <footer>
          <div class="container">
             <div class="copy text-center">
-               Copyright 2017 <a href='#'>Deli</a>
+               Copyright 2018 <a href='#'>Deli</a>
             </div>    
          </div>
     </footer>
@@ -119,11 +119,11 @@ $restaurantes=getRestaurants();
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/custom.js"></script>
 		<script>
-			function deleteRest(id){
+			function deleteBene(id){
 				var formData = new FormData();
-				formData.append("restId",id);
-				if (confirm("¿Desea Eliminar el Restaurante?") == true) {
-				var url = "../../model/restaurantes/Delete.php"; // the script where you handle the form input.
+				formData.append("beneId",id);
+				if (confirm("¿Desea Eliminar el Beneficio?") == true) {
+				var url = "../../model/beneficios/Delete.php"; // the script where you handle the form input.
     		jQuery.ajax({
 					 dataType: 'text',  // what to expect back from the PHP script, if anything
            cache: false,

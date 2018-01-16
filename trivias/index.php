@@ -65,7 +65,8 @@ $trivias=getTrivias();
                     <li><a href="../usuarios"><i class="glyphicon glyphicon-pencil"></i> Usuarios</a></li>							 			
                     <li class="current"><a><i class="glyphicon glyphicon-pencil"></i> Trivias</a></li>							 												
 										<li><a href="../noticias"><i class="glyphicon glyphicon-pencil"></i> Noticias</a></li>							 												
-								</ul>
+										<li><a href="../beneficios"><i class="glyphicon glyphicon-pencil"></i> Beneficios</a></li>							 												
+									</ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
