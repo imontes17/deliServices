@@ -15,6 +15,12 @@ $app->get('/', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->get('/filter', function (Request $request, Response $response) {
+    $name = $request->getParam("name");    
+    $json  = getRestaurantsByName($name);
+    $response->getBody()->write("$json");
+    return $response;
+});
 
 $app->get('/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');        
@@ -46,4 +52,5 @@ $app->post('/cercanos', function (Request $request, Response $response) {
 
     return $response;
 });
+
 $app->run();

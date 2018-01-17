@@ -62,7 +62,24 @@ function getRestaurantsByCategory($catId){
         return $e->getMessage();
     }
 }
-
+function getRestaurantsByName($name){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant FROM deli_restaurant WHERE name_restaurant LIKE '$name%'");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $arrayOk = $stm->fetchAll();
+        if(count($arrayOk) > 0){
+            $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
+        }else{
+            $result["msg"]="No existen coincidencias para: $name";
+            $result = json_encode($result,JSON_UNESCAPED_UNICODE);            
+        }
+        return $result;
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+}
 function setImagesRoute($array){
 $pathRest='/media/restaurantes/';
     foreach($array as $key => $element){
