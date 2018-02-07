@@ -9,11 +9,7 @@ try{
    $sql = "DELETE FROM deli_beneficios WHERE id = $beneId LIMIT 1" ;
    $db->exec($sql);
    $pathRest=$pathRest.$beneId;
-   if(!system('rm -rf ' . escapeshellarg($pathRest))){//Borra las fotos
-    echo "Se ha eliminado el restaurante con exito!!!";             
-   }else{
-       echo "No se ha terminado el proceso!!!";
-   }
+   echo "Se ha eliminado el beneficio con exito!!!";             
 }
 catch (PDOException $e)
 {
