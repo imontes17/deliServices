@@ -15,14 +15,24 @@ function initConnection(){
 function getAllTrivias(){
     try{
         $database=initConnection();
-        $stm = $database->prepare("SELECT name,premio,content FROM deli_trivia");
+        $stm = $database->prepare("SELECT * FROM deli_trivia");
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
-        $result = json_encode($stm->fetchAll(),JSON_UNESCAPED_UNICODE);
+        $arrayOk = setImagesRoute($stm->fetchAll());
+        $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
         return $result;
     }catch(PDOException $e){
         return $e->getMessage();
     }
 }
-
+function setImagesRoute($array){
+    $pathRest='/media/trivias/';
+        foreach($array as $key => $element){
+           $id = $array[$key]["id"];
+           $array[$key]["logoB"]            = $pathRest.$id."/logoB/".$array[$key]["logoB"];       
+           $array[$key]["logoN"]            = $pathRest.$id."/logoN/".$array[$key]["logoN"];
+           $array[$key]["imgP"]             = $pathRest.$id."/imgP/".$array[$key]["imgP"];
+        }  
+        return $array; 
+    }
 ?>
