@@ -19,6 +19,11 @@ function getAllTrivias(){
         $stm->execute();
         $stm->setFetchMode(PDO::FETCH_ASSOC); 
         $arrayOk = setImagesRoute($stm->fetchAll());
+
+        foreach($arrayOk as $key => $element){
+            $arrayOk[$key]["content"] = json_decode($arrayOk[$key]["content"]);
+         }  
+        
         $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
         return $result;
     }catch(PDOException $e){

@@ -406,10 +406,11 @@
     <script src="../../js/forms.js"></script>
 		<script>
 		jQuery("#btn-submit").click(function(e){
-			var trivia= new Array();
+			var trivia={};
+			var i=1;
 			$(".qSection").each(function(){
-			var pregunta = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val()};				
-			trivia.push(pregunta);	
+			trivia[i] = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val()};				
+			i++;	
 			});			
 			var formElement = document.getElementById("new-triv");
 			var form_data = new FormData(formElement); 
