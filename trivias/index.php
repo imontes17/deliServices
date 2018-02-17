@@ -92,7 +92,7 @@ $trivias=getTrivias();
 												<td><?php echo $trivia["fecha"];?></td>
 												<td>$ <?php echo $trivia["premio"];?></td>
 												<td><?php echo $trivia["vigencia"];?></td>
-												<td><?php echo $trivia["status"];?></td>												
+												<td><a href="" onclick="deleteTriv(<?php echo $trivia["id"]?>)">Eliminar</a></td>																							
 											</tr>
 										<?php endforeach;?>
 									</tbody>
@@ -116,5 +116,29 @@ $trivias=getTrivias();
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/custom.js"></script>
+		<script>
+			function deleteTriv(id){
+				var formData = new FormData();
+				formData.append("trivId",id);
+				if (confirm("¿Desea Eliminar la Trivia?") == true) {
+				var url = "../../model/trivias/Delete.php"; // the script where you handle the form input.
+    		jQuery.ajax({
+					 dataType: 'text',  // what to expect back from the PHP script, if anything
+           cache: false,
+           contentType: false,
+           processData: false,
+           type: "POST",
+           url: url,
+           data: formData, // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+					     location.reload();
+					 }
+         });
+    			e.preventDefault(); // avoid to execute the actual submit of the form.
+				}
+			}
+		</script>
   </body>
 </html>
