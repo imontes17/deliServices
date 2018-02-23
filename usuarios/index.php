@@ -1,4 +1,8 @@
 <?php
+session_start(); 
+if(!isset($_SESSION["user"])){
+	header("Location: http://".$_SERVER['HTTP_HOST']);
+}
 require_once "../model/usuarios/Read.php";
 $usuarios=getUsuarios();
 ?>
@@ -44,7 +48,7 @@ $usuarios=getUsuarios();
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi cuenta <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="login">Cerrar Sesión</a></li>
+	                          <li><a href="../model/Logout.php">Cerrar Sesión</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>

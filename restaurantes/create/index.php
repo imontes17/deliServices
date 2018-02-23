@@ -1,3 +1,9 @@
+<?php
+session_start(); 
+if(!isset($_SESSION["user"])){
+	header("Location: http://".$_SERVER['HTTP_HOST']);
+}
+?>
 <!DOCTYPE html>
 <html  lang="es">
   <head>
@@ -46,7 +52,7 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi cuenta <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="login.html">Cerrar Sesión</a></li>
+	                          <li><a href="../../model/Logout.php">Cerrar Sesión</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>

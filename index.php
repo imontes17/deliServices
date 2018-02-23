@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html  lang="es">
   <head>
@@ -40,7 +43,7 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi cuenta <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="login.html">Cerrar Sesión</a></li>
+	                          <li><a href="model/Logout.php">Cerrar Sesión</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -51,6 +54,7 @@
 	     </div>
 	</div>
     <div class="page-content">
+			<?php if(isset($_SESSION["user"])):?>
     	<div class="row">
 		  <div class="col-md-2">
 		  	<div class="sidebar content-box" style="display: block;">
@@ -87,15 +91,27 @@
 		  	</div>
 		  </div>
 		</div>
+		<?php else:?>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-wrapper">
+			        <div class="box">
+			            <div class="content-wrap">
+			                <h6>Inicio de Sesión</h6>
+			                <input class="form-control" type="text" placeholder="Username">
+			                <input class="form-control" type="password" placeholder="Password">
+			                <div class="action">
+			                    <a class="btn btn-primary signup" href="model/Login.php">Login</a>
+			                </div>                
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<?php endif;?>		
     </div>
 
-    <footer>
-         <div class="container">
-            <div class="copy text-center">
-               Copyright 2017 <a href='#'>Deli</a>
-            </div>    
-         </div>
-    </footer>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

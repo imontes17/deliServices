@@ -1,3 +1,9 @@
+<?php
+session_start(); 
+if(!isset($_SESSION["user"])){
+	header("Location: http://".$_SERVER['HTTP_HOST']);
+}
+?>
 <!DOCTYPE html>
 <html  lang="es">
   <head>
