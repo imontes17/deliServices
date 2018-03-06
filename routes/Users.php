@@ -86,7 +86,7 @@ function setBirthDate($birth,$token){
         $age = $today->diff($birth)->y;//Get differences in years
         $database=initConnection();
         $stm = $database->prepare("UPDATE deli_user SET birthdate=:birth,age=:age WHERE token=:token LIMIT 1");
-        $stm->execute(array(":birth" =>$birth->format("y-m-d"),':age'=>$age,':token' => $token));
+        $stm->execute(array(":birth" =>date_format($birth,'Y-m-d'),':age'=>(int)$age,':token' => $token));
         $queryCount = $stm->rowCount();
 
         if($queryCount == 1) {
