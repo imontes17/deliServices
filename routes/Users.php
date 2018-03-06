@@ -79,7 +79,7 @@ function setTipoComida($tipo,$token){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
-function setBirthDate($birth){
+function setBirthDate($birth,$token){
     try{
         $today = new DateTime();
         $birth =new DateTime($birth);

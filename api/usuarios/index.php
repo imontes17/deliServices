@@ -40,8 +40,8 @@ $app->post('/tipo_comida', function (Request $request, Response $response) {
 });
 $app->post('/birthdate', function (Request $request, Response $response) {
     $birth  = $request->getParam("birthdate");
-    //$token = $request->getParam("token");
-    $json  = setBirthDate($birth);
+    $token = $request->getParam("token");
+    $json  = setBirthDate($birth,$token);
     $response->getBody()->write("$json");
 
     return $response;
