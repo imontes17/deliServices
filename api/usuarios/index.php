@@ -38,6 +38,14 @@ $app->post('/tipo_comida', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->post('/birthdate', function (Request $request, Response $response) {
+    $birth  = $request->getParam("birthdate");
+    //$token = $request->getParam("token");
+    $json  = setBirthDate($birth);
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->post('/password/recuperar', function (Request $request, Response $response) {
     
     $email = $request->getParam("email");

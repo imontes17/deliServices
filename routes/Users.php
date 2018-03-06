@@ -79,6 +79,27 @@ function setTipoComida($tipo,$token){
         return json_encode($response,JSON_UNESCAPED_UNICODE);      
     }
 }
+function setBirthDate($birth){
+    try{
+        $today = new DateTime();
+        $birth =new DateTime($birth);
+        $age = $today->diff($birth)->y;//Get differences in years
+        $database=initConnection();
+        $stm = $database->prepare("UPDATE deli_user SET birthdate=:birth,age=:age WHERE token=:token LIMIT 1");
+        $stm->execute(array(":birth" =>$birth,':age'=>$age,':token' => $token));
+        $queryCount = $stm->rowCount();
+
+        if($queryCount == 1) {
+            $response["msg"]="Fecha de nacimiento guardada satisfactoriamente";
+        } else {
+            $response["error"]="No se ha guardado la fecha de nacimiento asegurese que el token sea el correcto";
+        }
+        return json_encode($response,JSON_UNESCAPED_UNICODE);              
+    }catch(PDOException $e){
+        $response["error"]=$e->getMessage();
+        return json_encode($response,JSON_UNESCAPED_UNICODE);      
+    }
+}
 function setProfileImage($img,$token){
     $pathUser = $_SERVER['DOCUMENT_ROOT'] . "/media/usuarios/";
     try{
