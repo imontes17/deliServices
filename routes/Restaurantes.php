@@ -62,6 +62,20 @@ function getRestaurantsByCategory($catId){
         return $e->getMessage();
     }
 }
+function getDestacados(){
+    try{
+        $database=initConnection();
+        $stm = $database->prepare("SELECT id_restaurant,name_restaurant,category,zona,incluye,direccion,imagen_principal,tipo_comida,precio,img_price,introduccion,p1,p2,p3,logo,link_video,imagen_2,imagen_3,frase,editorial,logo_editorial,tolerancia,tag,nickname,thumbnail FROM deli_restaurant WHERE destacado=1 LIMIT 5");
+        $stm->execute();
+        $stm->setFetchMode(PDO::FETCH_ASSOC); 
+        $arrayOk = setImagesRoute($stm->fetchAll());
+        $result = json_encode($arrayOk,JSON_UNESCAPED_UNICODE);
+        return $result;
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+}
+
 function getRestaurantsByName($name){
     try{
         $database=initConnection();

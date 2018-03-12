@@ -16,6 +16,21 @@
              return $e->getMessage();
          }
     }
+    function getDestacados()
+    {
+        try{
+            $database = new Connection();
+            $db = $database->openConnection();
+            $stm = $db->prepare("SELECT id_restaurant,name_restaurant,category,tipo_comida,precio FROM deli_restaurant WHERE destacado = 1 LIMIT 5 ");
+            $stm->execute();
+            $stm->setFetchMode(PDO::FETCH_ASSOC); 
+            return $stm->fetchAll();
+         }
+         catch (PDOException $e)
+         {
+             return $e->getMessage();
+         }
+    }
     function getSingleRestaurant($restId)
     {
         try{

@@ -15,6 +15,12 @@ $app->get('/', function (Request $request, Response $response) {
 
     return $response;
 });
+$app->get('/destacados', function (Request $request, Response $response) {
+    $json  = getDestacados();
+    $response->getBody()->write("$json");
+
+    return $response;
+});
 $app->get('/filter', function (Request $request, Response $response) {
     $name = $request->getParam("name");    
     $json  = getRestaurantsByName($name);
