@@ -15,7 +15,7 @@ $trivLogoB  = $_FILES["trivLogoB"] ? $_FILES["trivLogoB"]['name'] : null;
 $trivImgP  = $_FILES["trivImgP"] ? $_FILES["trivImgP"]['name'] : null;
 
 $trivCont  = $_POST["trivCont"]? $_POST["trivCont"] : null;
-
+$trivAnsw  = $_POST["answers"]? $_POST["answers"] : null;
 //copy($_FILES['restLogoEdit']['tmp_name'],$pathRest. $_FILES["restLogoEdit"]['name']);
 
 try{
@@ -23,10 +23,10 @@ try{
    $db = $database->openConnection();
    $stm = $db->prepare("
         INSERT INTO deli_trivia
-        (id,name,status,fecha,incluye,vigencia,premio,logoB,logoN,imgP,content) 
+        (id,name,status,fecha,incluye,vigencia,premio,logoB,logoN,imgP,content,answers) 
         VALUES 
-        (:id,:name,:status,:fecha,:inclu,:vig,:prem,:logoB,:logoN,:imgP,:cont)");
-    $stm->execute(array(":id" =>null,':name' => $trivName ,':status'=>"Disponible",':fecha' =>$trivFecha , ':inclu' =>$trivInclu,':vig'=> $trivVig,':prem'=> $trivPremio,':logoB'=> $trivLogoB,':logoN'=>$trivLogoN,':imgP'=>$trivImgP,':cont'=>$trivCont)); 
+        (:id,:name,:status,:fecha,:inclu,:vig,:prem,:logoB,:logoN,:imgP,:cont,:answ)");
+    $stm->execute(array(":id" =>null,':name' => $trivName ,':status'=>"Disponible",':fecha' =>$trivFecha , ':inclu' =>$trivInclu,':vig'=> $trivVig,':prem'=> $trivPremio,':logoB'=> $trivLogoB,':logoN'=>$trivLogoN,':imgP'=>$trivImgP,':cont'=>$trivCont,':answ'=>$trivAnsw)); 
     
     $lastRegister=$db->lastInsertId();
     $directory=$pathRest.$lastRegister;

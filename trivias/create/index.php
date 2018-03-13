@@ -162,197 +162,38 @@ if(!isset($_SESSION["user"])){
 										</div>
 										<div class="tab-pane" id="tab2">
 											<form class="form-horizontal" role="form">
-											<div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 1:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 2:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 3:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 4:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 5:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 6:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 7:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 8:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 9:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div><div class="qSection">
-								  				<div class="form-group">
-								    				<label class="col-sm-2 control-label">Pregunta 10:</label>
-								    				<div class="col-sm-10">
-								      					<input type="text" class="form-control question" placeholder="Pregunta">
-								    				</div>
-								  				</div>
-												<div class="form-group">
-								    				<label class="col-sm-2 control-label">Respuestas:</label>
-								    				<div class="col-sm-3">
-								      					<input type="text" class="form-control asw1" placeholder="Respuesta 1">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw2" placeholder="Respuesta 2">
-													</div>
-													<div class="col-sm-3">
-								      					<input type="text" class="form-control asw3" placeholder="Respuesta 3">
-								    				</div>
-												</div>
-											</div>											
+											<?php
+											for($x=1;$x<=10;$x++){
+											 echo'<div class="qSection">
+											 <div class="form-group">
+											   <label class="col-sm-2 control-label">Pregunta'.$x.':</label>
+											   <div class="col-sm-8">
+													 <input type="text" class="form-control question" placeholder="Pregunta">
+											   </div>
+											 </div>
+										   <div class="form-group">
+											   <label class="col-sm-2 control-label">Respuestas:</label>
+											   <div class="col-sm-2">
+													 <input type="text" class="form-control asw1" placeholder="Respuesta 1">
+											   </div>
+											   <div class="col-sm-2">
+													 <input type="text" class="form-control asw2" placeholder="Respuesta 2">
+											   </div>
+											   <div class="col-sm-2">
+													 <input type="text" class="form-control asw3" placeholder="Respuesta 3">
+											   </div>
+											   <div class="col-sm-3">
+												   <select class="form-control aswOk">
+													   <option value="">Respuesta Correcta</option>
+													   <option value="asw1">R1</option>
+													   <option value="asw2">R2</option>
+													   <option value="asw3">R3</option>
+												   </select>
+											   </div>
+										   </div>
+									   </div>';
+											}
+											?>											
 											</form>
 										</div>
 								<div class="form-group">
@@ -413,6 +254,7 @@ if(!isset($_SESSION["user"])){
 		<script>
 		jQuery("#btn-submit").click(function(e){
 			var trivia={};
+			var answers={};			
 			var i=1;
 			$(".qSection").each(function(){
 			trivia[i] = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val()};				
@@ -421,6 +263,12 @@ if(!isset($_SESSION["user"])){
 			var formElement = document.getElementById("new-triv");
 			var form_data = new FormData(formElement); 
 			form_data.append("trivCont",JSON.stringify(trivia));
+			var i=1;			
+			$(".aswOk").each(function(){
+				answers[i]={respuesta:$(this).val()};
+				i++;					
+			});
+			form_data.append("answers",JSON.stringify(answers));
 			
     	var url = "../../model/trivias/Create.php"; // the script where you handle the form input.
     	jQuery.ajax({
