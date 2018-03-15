@@ -126,9 +126,21 @@ if(!isset($_SESSION["user"])){
 								    			</div>
 												</div>	
 												<div class="form-group">
-								    			<label for="trivPremio" class="col-sm-2 control-label">Premio:</label>
+								    			<label for="trivPremio" class="col-sm-2 control-label">Premio 1:</label>
 								    			<div class="col-sm-10">
-								      			<input type="number" class="form-control" min="1" name="trivPremio" placeholder="$">
+								      			<input type="text" class="form-control" name="trivPremio1" placeholder="1er Lugar">
+								    			</div>
+												</div>
+												<div class="form-group">
+								    			<label for="trivPremio2" class="col-sm-2 control-label">Premio 2:</label>
+								    			<div class="col-sm-10">
+								      			<input type="text" class="form-control" name="trivPremio2" placeholder="2do Lugar">
+								    			</div>
+												</div>
+												<div class="form-group">
+								    			<label for="trivPremio3" class="col-sm-2 control-label">Premio 3:</label>
+								    			<div class="col-sm-10">
+								      			<input type="text" class="form-control" name="trivPremio3" placeholder="3er Lugar">
 								    			</div>
 												</div>
 												<div class="form-group">
@@ -216,7 +228,7 @@ if(!isset($_SESSION["user"])){
     <footer>
          <div class="container">
             <div class="copy text-center">
-               Copyright 2017 <a href='#'>Deli</a>
+               Copyright 2018 <a href='#'>Deli</a>
             </div>    
          </div>
     </footer>

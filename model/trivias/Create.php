@@ -7,7 +7,10 @@ $trivName  = $_POST["trivName"]? $_POST["trivName"] : null;
 $trivFecha  = $_POST["trivFecha"]? $_POST["trivFecha"] : null;
 $trivInclu  = $_POST["trivInclu"]? $_POST["trivInclu"] : null;
 $trivVig  = $_POST["trivVig"]? $_POST["trivVig"] : null;
-$trivPremio  = $_POST["trivPremio"]? $_POST["trivPremio"] : null;
+$trivPremio1  = $_POST["trivPremio1"]? $_POST["trivPremio1"] : null;
+$trivPremio2  = $_POST["trivPremio2"]? $_POST["trivPremio2"] : null;
+$trivPremio3  = $_POST["trivPremio3"]? $_POST["trivPremio3"] : null;
+
 
 
 $trivLogoN  = $_FILES["trivLogoN"] ? $_FILES["trivLogoN"]['name'] : null;
@@ -23,10 +26,10 @@ try{
    $db = $database->openConnection();
    $stm = $db->prepare("
         INSERT INTO deli_trivia
-        (id,name,status,fecha,incluye,vigencia,premio,logoB,logoN,imgP,content,answers) 
+        (id,name,status,fecha,incluye,vigencia,premio1,premio2,premio3,logoB,logoN,imgP,content,answers) 
         VALUES 
-        (:id,:name,:status,:fecha,:inclu,:vig,:prem,:logoB,:logoN,:imgP,:cont,:answ)");
-    $stm->execute(array(":id" =>null,':name' => $trivName ,':status'=>"Disponible",':fecha' =>$trivFecha , ':inclu' =>$trivInclu,':vig'=> $trivVig,':prem'=> $trivPremio,':logoB'=> $trivLogoB,':logoN'=>$trivLogoN,':imgP'=>$trivImgP,':cont'=>$trivCont,':answ'=>$trivAnsw)); 
+        (:id,:name,:status,:fecha,:inclu,:vig,:prem1,:prem2,:prem3,:logoB,:logoN,:imgP,:cont,:answ)");
+    $stm->execute(array(":id" =>null,':name' => $trivName ,':status'=>"Disponible",':fecha' =>$trivFecha , ':inclu' =>$trivInclu,':vig'=> $trivVig,':prem1'=> $trivPremio1,':prem2'=> $trivPremio2,':prem3'=> $trivPremio3,':logoB'=> $trivLogoB,':logoN'=>$trivLogoN,':imgP'=>$trivImgP,':cont'=>$trivCont,':answ'=>$trivAnsw)); 
     
     $lastRegister=$db->lastInsertId();
     $directory=$pathRest.$lastRegister;
