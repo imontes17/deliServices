@@ -83,7 +83,6 @@ $trivias=getTrivias();
 											<th>#</th>
 											<th>Nombre</th>
 											<th>Label Fecha</th>
-											<th>Valor Premio</th>
 											<th>Vigencia</th>		
 											<th>Status</th>										
 										</tr>
@@ -94,7 +93,6 @@ $trivias=getTrivias();
 												<td><?php echo $trivia["id"];?></td>
 												<td><?php echo $trivia["name"];?></td>
 												<td><?php echo $trivia["fecha"];?></td>
-												<td>$ <?php echo $trivia["premio"];?></td>
 												<td><?php echo $trivia["vigencia"];?></td>
 												<td><a href="" onclick="deleteTriv(<?php echo $trivia["id"]?>)">Eliminar</a></td>																							
 											</tr>
