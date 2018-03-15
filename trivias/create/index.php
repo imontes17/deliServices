@@ -179,9 +179,19 @@ if(!isset($_SESSION["user"])){
 											 echo'<div class="qSection">
 											 <div class="form-group">
 											   <label class="col-sm-2 control-label">Pregunta'.$x.':</label>
-											   <div class="col-sm-8">
+											   <div class="col-sm-6">
 													 <input type="text" class="form-control question" placeholder="Pregunta">
-											   </div>
+												 </div>
+												 <div class="col-sm-3">
+												 <select class="form-control aswOk">
+													 <option value="">Respuesta Correcta</option>
+													 <option value="asw1">R1</option>
+													 <option value="asw2">R2</option>
+													 <option value="asw3">R3</option>
+													 <option value="asw4">R4</option>
+													 <option value="asw5">R5</option>
+												 </select>
+											 </div>
 											 </div>
 										   <div class="form-group">
 											   <label class="col-sm-2 control-label">Respuestas:</label>
@@ -193,15 +203,13 @@ if(!isset($_SESSION["user"])){
 											   </div>
 											   <div class="col-sm-2">
 													 <input type="text" class="form-control asw3" placeholder="Respuesta 3">
-											   </div>
-											   <div class="col-sm-3">
-												   <select class="form-control aswOk">
-													   <option value="">Respuesta Correcta</option>
-													   <option value="asw1">R1</option>
-													   <option value="asw2">R2</option>
-													   <option value="asw3">R3</option>
-												   </select>
-											   </div>
+												 </div>
+												 <div class="col-sm-2">
+												 	<input type="text" class="form-control asw4" placeholder="Respuesta 4">
+											 	 </div>
+											 	 <div class="col-sm-2">
+											 		<input type="text" class="form-control asw5" placeholder="Respuesta 5">
+										     </div>
 										   </div>
 									   </div>';
 											}
@@ -269,7 +277,7 @@ if(!isset($_SESSION["user"])){
 			var answers={};			
 			var i=1;
 			$(".qSection").each(function(){
-			trivia[i] = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val()};				
+			trivia[i] = {question:$(this).find(".question").val(), asw1:$(this).find(".asw1").val(), asw2:$(this).find(".asw2").val(), asw3:$(this).find(".asw3").val(),asw4:$(this).find(".asw4").val(), asw5:$(this).find(".asw5").val()};				
 			i++;	
 			});			
 			var formElement = document.getElementById("new-triv");
